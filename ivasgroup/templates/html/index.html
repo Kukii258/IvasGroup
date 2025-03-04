@@ -71,7 +71,7 @@
               <div class="slide-content">
                 <h1>Tražimo Pojačanje</h1>
                 <p>Pridružite se našem timu stručnjaka za event tehnologiju</p>
-                <a href="contact.html" class="btn btn-primary">Pridruži nam se!</a>
+                <a href="{% url 'contact' %}" class="btn btn-primary">Pridruži nam se!</a>
               </div>
             </div>
           </div>
@@ -165,7 +165,7 @@
         <div class="container">
           <h2>Spremni podići svoj sljedeći event na višu razinu?</h2>
           <p>Kontaktirajte nas danas za prilagođenu ponudu koja odgovara vašim specifičnim potrebama.</p>
-          <a href="contact.html" class="btn btn-primary">Kontaktirajte nas</a>
+          <a href="{% url 'contact' %}" class="btn btn-primary">Kontaktirajte nas</a>
         </div>
       </section>
 
@@ -186,10 +186,10 @@
         <div class="footer-links">
           <h4>Brzi Linkovi</h4>
           <ul>
-            <li><a href="index.html">Početna</a></li>
-            <li><a href="gallery.html">Galerija</a></li>
-            <li><a href="about.html">O nama</a></li>
-            <li><a href="contact.html">Kontakt</a></li>
+            <li><a href="{% url 'index' %}">Početna</a></li>
+            <li><a href="{% url 'galerija' %}">Galerija</a></li>
+            <li><a href="{% url 'about_us' %}">O nama</a></li>
+            <li><a href="{% url 'contact' %}">Kontakt</a></li>
           </ul>
         </div>
         <div class="footer-contact">

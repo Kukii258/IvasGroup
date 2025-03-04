@@ -151,10 +151,10 @@
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="index.html">Početna</a></li>
-            <li><a href="gallery.html">Galerija</a></li>
-            <li><a href="about.html">O Nama</a></li>
-            <li><a href="contact.html">Kontakt</a></li>
+            <li><a href="{% url 'index' %}">Početna</a></li>
+            <li><a href="{% url 'galerija' %}">Galerija</a></li>
+            <li><a href="{% url 'about_us' %}">O nama</a></li>
+            <li><a href="{% url 'contact' %}">Kontakt</a></li>
           </ul>
         </div>
         <div class="footer-contact">
