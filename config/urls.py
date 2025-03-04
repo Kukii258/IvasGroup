@@ -7,9 +7,14 @@ from django.urls import include
 from django.urls import path
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
+from ivas import views, models
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    path("galerija", views.galerija,name='galerija'),
+    path("photos", views.photos,name='photos'),
+    path("contact", views.contact,name='contact'),
+    path("about_us", views.about_us,name='about_us'),
+    path("", views.index, name="index"),
     path(
         "about/",
         TemplateView.as_view(template_name="pages/about.html"),

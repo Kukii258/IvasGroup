@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "servor --reload"
+  },
+  "dependencies": {
+    "servor": "^4.0.2",
+    "gsap": "^3.12.5",
+    "swiper": "^11.0.5"
+  }
+}

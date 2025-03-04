@@ -1,0 +1,227 @@
+{% load static i18n %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Gallery - Ivas Group</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="View our portfolio of event technology installations and projects.">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="{% static 'js/script.js' %}"></script>
+  </head>
+  <body>
+    <div class="spotlight-container">
+      <div class="spotlight spotlight-1"></div>
+      <div class="spotlight spotlight-2"></div>
+      <div class="spotlight spotlight-3"></div>
+    </div>
+
+    <header>
+      <div class="logo">
+        <span class="logo-text">Ivas Group</span>
+        <span class="logo-tagline">Event Technology Solutions</span>
+      </div>
+      <nav>
+        <a href="{% url 'index' %}">Početna</a>
+        <a href="{% url 'galerija' %}" class="active" >Galerija</a>
+        <a href="{% url 'about_us' %}">O Nama</a>
+        <a href="{% url 'contact' %}">Kontakt</a>
+      </nav>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-header">
+        <div class="page-header-content">
+          <h1>Naš rad</h1>
+          <p>Pregled naših nedavnih projekata i instalacija</p>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <div class="container">
+          <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">Svi Albumi</button>
+            <button class="filter-btn" data-filter="lighting">Lighting</button>
+            <button class="filter-btn" data-filter="video">Video</button>
+            <button class="filter-btn" data-filter="audio">Audio</button>
+            <button class="filter-btn" data-filter="production">Production</button>
+          </div>
+
+          <div class="albums-grid">
+            <div class="album-item" data-category="lighting production">
+              <div class="album-cover">
+                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Concert lighting setup">
+                <div class="album-count">
+                  <i class="fas fa-images"></i>
+                  <span>12 Photos</span>
+                </div>
+              </div>
+              <div class="album-info">
+                <h3>Ultra Split 2024</h3>
+                <p>Kompletna rasvjeta, audio i video sustav za trodnevni festival na otvorenom</p>
+                <a href="{% url 'photos' %}" class="btn btn-small">Otvori Album</a>
+              </div>
+            </div>
+<!--
+            <div class="album-item" data-category="audio video">
+              <div class="album-cover">
+                <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Concert venue">
+                <div class="album-count">
+                  <i class="fas fa-images"></i>
+                  <span>8 Photos</span>
+                </div>
+              </div>
+              <div class="album-info">
+                <h3>Corporate Conference</h3>
+                <p>Integrated AV solution for keynotes and breakout sessions</p>
+                <a href="album-corporate-conference.html" class="btn btn-small">View Album</a>
+              </div>
+            </div>
+
+            <div class="album-item" data-category="video lighting">
+              <div class="album-cover">
+                <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Corporate event">
+                <div class="album-count">
+                  <i class="fas fa-images"></i>
+                  <span>15 Photos</span>
+                </div>
+              </div>
+              <div class="album-info">
+                <h3>Product Launch Event</h3>
+                <p>Custom lighting and projection mapping for a major tech company</p>
+                <a href="album-product-launch.html" class="btn btn-small">View Album</a>
+              </div>
+            </div>
+
+            <div class="album-item" data-category="lighting audio">
+              <div class="album-cover">
+                <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Wedding venue">
+                <div class="album-count">
+                  <i class="fas fa-images"></i>
+                  <span>20 Photos</span>
+                </div>
+              </div>
+              <div class="album-info">
+                <h3>Wedding Reception</h3>
+                <p>Elegant lighting design and sound system for an upscale venue</p>
+                <a href="album-wedding-reception.html" class="btn btn-small">View Album</a>
+              </div>
+            </div>
+
+            <div class="album-item" data-category="production video">
+              <div class="album-cover">
+                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Theater production">
+                <div class="album-count">
+                  <i class="fas fa-images"></i>
+                  <span>18 Photos</span>
+                </div>
+              </div>
+              <div class="album-info">
+                <h3>Theater Production</h3>
+                <p>Complete technical production for a Broadway-style show</p>
+                <a href="album-theater-production.html" class="btn btn-small">View Album</a>
+              </div>
+            </div>
+
+            <div class="album-item" data-category="audio production">
+              <div class="album-cover">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Music concert">
+                <div class="album-count">
+                  <i class="fas fa-images"></i>
+                  <span>14 Photos</span>
+                </div>
+              </div>
+              <div class="album-info">
+                <h3>Rock Concert</h3>
+                <p>Full audio and lighting setup for a stadium concert</p>
+                <a href="album-rock-concert.html" class="btn btn-small">View Album</a>
+              </div>
+            </div>
+
+            <div class="album-item" data-category="video lighting">
+              <div class="album-cover">
+                <img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fashion show">
+                <div class="album-count">
+                  <i class="fas fa-images"></i>
+                  <span>10 Photos</span>
+                </div>
+              </div>
+              <div class="album-info">
+                <h3>Fashion Show</h3>
+                <p>Runway lighting and video displays for a high-end fashion event</p>
+                <a href="album-fashion-show.html" class="btn btn-small">View Album</a>
+              </div>
+            </div>
+
+            <div class="album-item" data-category="production audio">
+              <div class="album-cover">
+                <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Festival stage">
+                <div class="album-count">
+                  <i class="fas fa-images"></i>
+                  <span>16 Photos</span>
+                </div>
+              </div>
+              <div class="album-info">
+                <h3>Summer Festival</h3>
+                <p>Multi-stage audio and lighting for a weekend festival</p>
+                <a href="album-summer-festival.html" class="btn btn-small">View Album</a>
+              </div>
+            </div>
+        -->
+          </div>
+          </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-text">Ivas Group</span>
+          <p>Oživljavamo vaše događaje uz najmodernija tehnološka rješenja.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Brzi Linkovi</h4>
+          <ul>
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="gallery.html">Galerija</a></li>
+            <li><a href="about.html">O nama</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Kontaktirajte nas</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Donje Svetice 40, 10000, Zagreb</li>
+            <li><i class="fas fa-phone"></i> 01 4633 353</li>
+            <li><i class="fas fa-envelope"></i> info@ivasgroup.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2025 Ivas Group. Sva prava zadržana.</p>
+          <div class="footer-legal">
+            <a href="#">Pravila privatnosti</a>
+            <a href="#">Uvjeti korištenja</a>
+            <a href="#">Mapa web stranice</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

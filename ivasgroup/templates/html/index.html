@@ -1,0 +1,217 @@
+{% load static i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ivas Group - Professional Event Technology Solutions</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Professional lighting, video, and audio equipment installation for events, concerts, and more.">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="{% static 'js/script.js' %}"></script>
+  </head>
+
+
+  <body>
+    <div class="spotlight-container">
+      <div class="spotlight spotlight-1"></div>
+      <div class="spotlight spotlight-2"></div>
+      <div class="spotlight spotlight-3"></div>
+    </div>
+
+    <header>
+      <div class="logo">
+        <span class="logo-text">Ivas Group</span>
+        <span class="logo-tagline">Event Technology Solutions</span>
+      </div>
+      <nav>
+        <a href="{% url 'index' %}" class="active">Početna</a>
+        <a href="{% url 'galerija' %}" >Galerija</a>
+        <a href="{% url 'about_us' %}">O Nama</a>
+        <a href="{% url 'contact' %}">Kontakt</a>
+      </nav>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Slider Section -->
+            <section class="hero-slider">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+          <div class="swiper-slide" style="background-image: url('{% static "images/index/1.jpg" %}')">
+              <div class="slide-content">
+                <h1>Oživljavamo Vaše Događaje</h1>
+                <p>Profesionalna rješenja za rasvjetu, video i zvuk za nezaboravna iskustva</p>
+              </div>
+            </div>
+              <div class="swiper-slide" style="background-image: url('{% static "images/index/2.jpg" %}')">
+              <div class="slide-content">
+                <h1>Najsuvremenija Tehnologija</h1>
+                <p>Vrhunska oprema za događaje bilo koje veličine</p>
+              </div>
+            </div>
+              <div class="swiper-slide" style="background-image: url('{% static "images/index/3.jpg" %}')">
+              <div class="slide-content">
+                <h1>Stručna Tehnička Produkcija</h1>
+                <p>Naš tim osigurava besprijekornu izvedbu od postavljanja do demontaže</p>
+              </div>
+            </div>
+              <div class="swiper-slide" style="background-image: url('{% static "images/index/4.jpg" %}')">
+              <div class="slide-content">
+                <h1>Kreativna Rješenja</h1>
+                <p>Prilagođeni dizajni koji vašu viziju pretvaraju u stvarnost</p>
+              </div>
+            </div>
+              <div class="swiper-slide" style="background-image: url('{% static "images/index/5.jpg" %}')">
+              <div class="slide-content">
+                <h1>Tražimo Pojačanje</h1>
+                <p>Pridružite se našem timu stručnjaka za event tehnologiju</p>
+                <a href="contact.html" class="btn btn-primary">Pridruži nam se!</a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </section>
+
+
+      <section id="services" class="services">
+        <div class="section-header">
+          <h2>Naše Usluge</h2>
+          <p>Sveobuhvatna rješenja event tehnologije prilagođena vašim potrebama</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Dizajn i Instalacija Rasvjete</h3>
+            <p>Prilagođena rasvjetna rješenja koja stvaraju savršenu atmosferu za vaš događaj, od suptilne ambijentalne rasvjete do dinamičnih scenskih produkcija.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-video"></i>
+            </div>
+            <h3>Video Sustavi</h3>
+            <p>HD video zidovi, projekcijsko mapiranje i zaslonska rješenja koja pružaju zadivljujuće vizualne efekte i povećavaju angažman publike.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-volume-up"></i>
+            </div>
+            <h3>Audio Inženjering</h3>
+            <p>Kristalno čisti audio sustavi dizajnirani i kalibrirani za savršenu akustiku u bilo kojem prostoru, osiguravajući da se vaša poruka čuje.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <h3>Tehnička Produkcija</h3>
+            <p>Kompletne usluge event produkcije uključujući najam opreme, postavljanje, upravljanje i demontažu uz stručne tehničare.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Sponsors Section -->
+      <section class="sponsors-section">
+        <div class="sponsors-header">
+          <h2>Naši Pouzdani Partneri</h2>
+          <p>Surađujemo s vodećim brendovima u industriji kako bismo isporučili vrhunska event iskustva</p>
+        </div>
+
+        <div class="sponsors-grid">
+          <div class="sponsor-item">
+            <img src="{% static 'images/index/MA-lightning.png' %}" alt="MA-lightning">
+          </div>
+          <div class="sponsor-item">
+            <img src="{% static 'images/index/eurotruss-logo.png' %}" alt="EuroTruss">
+          </div>
+           <div class="sponsor-item">
+            <img src="{% static 'images/index/MA-lightning.png' %}" alt="MA-lightning">
+          </div>
+          <div class="sponsor-item">
+            <img src="{% static 'images/index/eurotruss-logo.png' %}" alt="EuroTruss">
+          </div>
+            <div class="sponsor-item">
+            <img src="{% static 'images/index/MA-lightning.png' %}" alt="MA-lightning">
+          </div>
+          <div class="sponsor-item">
+            <img src="{% static 'images/index/eurotruss-logo.png' %}" alt="EuroTruss">
+          </div>
+          <div class="sponsor-item">
+            <img src="{% static 'images/index/MA-lightning.png' %}" alt="MA-lightning">
+          </div>
+          <div class="sponsor-item">
+            <img src="{% static 'images/index/eurotruss-logo.png' %}" alt="EuroTruss">
+          </div>
+          <div class="sponsor-item">
+            <img src="{% static 'images/index/MA-lightning.png' %}" alt="MA-lightning">
+          </div>
+          <div class="sponsor-item">
+            <img src="{% static 'images/index/eurotruss-logo.png' %}" alt="EuroTruss">
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="container">
+          <h2>Spremni podići svoj sljedeći event na višu razinu?</h2>
+          <p>Kontaktirajte nas danas za prilagođenu ponudu koja odgovara vašim specifičnim potrebama.</p>
+          <a href="contact.html" class="btn btn-primary">Kontaktirajte nas</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-text">Ivas Group</span>
+          <p>Oživljavamo vaše događaje uz najmodernija tehnološka rješenja.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Brzi Linkovi</h4>
+          <ul>
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="gallery.html">Galerija</a></li>
+            <li><a href="about.html">O nama</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Kontaktirajte nas</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Donje Svetice 40, 10000, Zagreb</li>
+            <li><i class="fas fa-phone"></i> 01 4633 353</li>
+            <li><i class="fas fa-envelope"></i> info@ivasgroup.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2025 Ivas Group. Sva prava zadržana.</p>
+          <div class="footer-legal">
+            <a href="#">Pravila privatnosti</a>
+            <a href="#">Uvjeti korištenja</a>
+            <a href="#">Mapa web stranice</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,181 @@
+{% load static i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kontakt - Ivas Group</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Get in touch with Ivas Group for your event technology needs. Request a quote or consultation.">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="{% static 'js/script.js' %}"></script>
+  </head>
+  <body>
+    <div class="spotlight-container">
+      <div class="spotlight spotlight-1"></div>
+      <div class="spotlight spotlight-2"></div>
+      <div class="spotlight spotlight-3"></div>
+    </div>
+
+    <header>
+      <div class="logo">
+        <span class="logo-text">Ivas Group</span>
+        <span class="logo-tagline">Event Technology Solutions</span>
+      </div>
+      <nav>
+        <a href="{% url 'index' %}" >Početna</a>
+        <a href="{% url 'galerija' %}" >Galerija</a>
+        <a href="{% url 'about_us' %}">O Nama</a>
+        <a href="{% url 'contact' %}" class="active">Kontakt</a>
+      </nav>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-header">
+        <div class="page-header-content">
+          <h1>Kontaktirajte Nas</h1>
+          <p>Spremni ste oživjeti svoju viziju događaja? Kontaktirajte nas danas.</p>
+        </div>
+      </section>
+
+      <section class="contact-page">
+        <div class="container">
+          <div class="contact-grid">
+            <div class="contact-form-container">
+              <h2>Pošaljite Nam Poruku</h2>
+              <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                  <label for="name">Ime</label>
+                  <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Telefon</label>
+                  <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                  <label for="eventType">Vrsta Događaja</label>
+                  <select id="eventType" name="eventType">
+                    <option value="">Odaberite vrstu događaja</option>
+                    <option value="concert">Koncert/Nastup</option>
+                    <option value="corporate">Poslovni Događaj</option>
+                    <option value="wedding">Vjenčanje</option>
+                    <option value="festival">Festival</option>
+                    <option value="other">Drugo</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="message">Poruka</label>
+                  <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Pošalji Poruku</button>
+              </form>
+            </div>
+
+            <div class="contact-info-container">
+              <h2>Kontakt Informacije</h2>
+              <div class="contact-info">
+                <div class="info-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <div>
+                    <h3>Naša Lokacija</h3>
+                    <p>Donje Svetice 40<br>10000 Zagreb</p>
+                  </div>
+                </div>
+                <div class="info-item">
+                  <i class="fas fa-phone"></i>
+                  <div>
+                    <h3>Telefon</h3>
+                    <p>01 4633 353</p>
+                  </div>
+                </div>
+                <div class="info-item">
+                  <i class="fas fa-envelope"></i>
+                  <div>
+                    <h3>Email</h3>
+                    <p>info@ivasgroup.com</p>
+                  </div>
+                </div>
+                <div class="info-item">
+                  <i class="fas fa-clock"></i>
+                  <div>
+                    <h3>Radno Vrijeme</h3>
+                    <p>Ponedjeljak - Petak: 8:00 - 16:00<br>Nedjelja: Zatvoreno</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="social-links-container">
+                <h3>Povežite Se S Nama</h3>
+                <div class="social-links">
+                  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-container">
+            <h2>Pronađite Nas</h2>
+            <div class="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2781.3267909929623!2d16.0143912!3d45.804713299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d63476924ddd%3A0x435dfee3fc201fe!2sIvas%20Grupa%20d.o.o.!5e0!3m2!1shr!2shr!4v1741005096479!5m2!1shr!2shr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-text">Ivas Group</span>
+          <p>Bringing your events to life with cutting-edge technology solutions.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="gallery.html">Galerija</a></li>
+            <li><a href="about.html">O Nama</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Donje Svetice 40, 10000, Zagreb</li>
+            <li><i class="fas fa-phone"></i> 01 4633 353</li>
+            <li><i class="fas fa-envelope"></i> info@ivasgroup.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2025 Ivas Group. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
