@@ -5,10 +5,11 @@ import ssl
 from pathlib import Path
 
 import environ
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+from pathlib import Path
 
-# ivasgroup/
-APPS_DIR = BASE_DIR / "ivasgroup"
+BASE_DIR = Path(__file__).resolve().parent.parent  # Converts it into a Path object
+APPS_DIR = BASE_DIR / "ivasgroup"  # Now this works correctly
+
 env = environ.Env()
 
 READ_DOT_ENV_FILE = env.bool("DJANGO_READ_DOT_ENV_FILE", default=False)
