@@ -174,11 +174,13 @@ LOGGING = {
 
 # Your stuff...
 # ------------------------------------------------------------------------------
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 DISABLE_COLLECTSTATIC = env.bool("DISABLE_COLLECTSTATIC", default=False)
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "ivasgroup/static"),  # Ensure your app's static directory is included
+]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
