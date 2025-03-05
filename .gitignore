@@ -50,7 +50,7 @@ coverage.xml
 *.mo
 *.pot
 
-# Django stuff:  asdas
+# Django stuff:
 staticfiles/
 
 # Sphinx documentation

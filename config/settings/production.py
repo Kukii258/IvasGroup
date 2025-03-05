@@ -5,7 +5,11 @@ from .base import INSTALLED_APPS
 from .base import REDIS_URL
 from .base import env
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+from .base import *
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Ensure collectstatic works in production
 
 
 SECRET_KEY = 'Y9SfXg_H9J_1PypN4ihFY5DNbEEcwQea_PgM5mU90dsWShX0RXC7drA99sGDI6MsH7M'
@@ -174,12 +178,11 @@ LOGGING = {
 
 # Your stuff...
 # ------------------------------------------------------------------------------
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 DISABLE_COLLECTSTATIC = env.bool("DISABLE_COLLECTSTATIC", default=False)
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "ivasgroup/static"),  # Ensure your app's static directory is included
+    os.path.join(BASE_DIR, "ivasgroup", "static"),
 ]
 
 MIDDLEWARE = [

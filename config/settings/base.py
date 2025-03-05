@@ -5,8 +5,8 @@ import ssl
 from pathlib import Path
 
 import environ
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 # ivasgroup/
 APPS_DIR = BASE_DIR / "ivasgroup"
 env = environ.Env()
@@ -154,13 +154,19 @@ MIDDLEWARE = [
 # STATIC
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = None
+
+# Allow STATIC_ROOT to be set in production
+if os.getenv("DJANGO_ENV") == "production":
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 # https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "ivasgroup", "static"),  # Adjust this to where your static files live
-]
+
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
