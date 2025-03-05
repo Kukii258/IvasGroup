@@ -8,7 +8,7 @@ from .base import env
 
 
 
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = env('Y9SfXg_H9J_1PypN4ihFY5DNbEEcwQea_PgM5mU90dsWShX0RXC7drA99sGDI6MsH7M')
 DEBUG = env.bool('DEBUG', default=False)
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['*'])
 
