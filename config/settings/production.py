@@ -19,7 +19,7 @@ CSRF_TRUSTED_ORIGINS = [
 PORT = os.getenv("PORT", "5000")
 
 
-
+DATABASES["default"]["CONN_MAX_AGE"] = env.int("CONN_MAX_AGE", default=60)
 # GENERAL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
@@ -76,6 +76,8 @@ SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
     default=True,
 )
 
+CSRF_COOKIE_HTTPONLY = False
+SESSION_COOKIE_HTTPONLY = False
 
 
 
@@ -91,8 +93,8 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
-MEDIA_ROOT = os.getenv("MEDIA_ROOT", "/app/media")
 MEDIA_URL = "/media/"
+MEDIA_ROOT = os.getenv("MEDIA_ROOT", "/app/media")
 # EMAIL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email
