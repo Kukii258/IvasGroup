@@ -5,7 +5,10 @@ from .base import INSTALLED_APPS
 from .base import REDIS_URL
 from .base import env
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 from .base import *
 
@@ -94,7 +97,7 @@ STORAGES = {
         },
     },
     "staticfiles": {
-        "BACKEND":"django.contrib.staticfiles.storage.StaticFilesStorage" ,
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
 MEDIA_URL = "/media/"

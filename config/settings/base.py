@@ -7,7 +7,8 @@ from pathlib import Path
 import environ
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent  # Converts it into a Path object
+BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
+
 APPS_DIR = BASE_DIR / "ivasgroup"  # Now this works correctly
 
 env = environ.Env()
@@ -47,7 +48,6 @@ LOCALE_PATHS = [str(BASE_DIR / "locale")]
 # DATABASES
 # ------------------------------------------------------------------------------
 env = environ.Env()
-environ.Env.read_env()
 env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
@@ -77,7 +77,6 @@ DJANGO_APPS = [
     # "django.contrib.humanize", # Handy template tags
     "django.contrib.admin",
     "django.forms",
-    "whitenoise.runserver_nostatic",
 ]
 THIRD_PARTY_APPS = [
     "crispy_forms",
@@ -155,24 +154,17 @@ MIDDLEWARE = [
 # STATIC
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-STATIC_ROOT = None
-
-# Allow STATIC_ROOT to be set in production
-if os.getenv("DJANGO_ENV") == "production":
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+STATIC_ROOT = str(BASE_DIR / "staticfiles")
 # https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-
+STATICFILES_DIRS = [str(APPS_DIR / "static")]
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
+
 
 # MEDIA
 # ------------------------------------------------------------------------------
