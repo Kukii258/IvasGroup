@@ -12,8 +12,11 @@ SECRET_KEY = 'Y9SfXg_H9J_1PypN4ihFY5DNbEEcwQea_PgM5mU90dsWShX0RXC7drA99sGDI6MsH7
 DEBUG = env.bool('DEBUG', default=False)
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['*'])
 
+CSRF_TRUSTED_ORIGINS = [
+    "http://95.111.252.129",  # Your server's IP
+]
 
-
+PORT = os.getenv("PORT", "5000")
 
 
 
@@ -77,16 +80,19 @@ SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
 
 
 # STATIC & MEDIA
-# ------------------------
 STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
+        "OPTIONS": {
+            "location": "/app/media/",
+        },
     },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
-
+MEDIA_ROOT = os.getenv("MEDIA_ROOT", "/app/media")
+MEDIA_URL = "/media/"
 # EMAIL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email
@@ -106,7 +112,7 @@ ACCOUNT_EMAIL_SUBJECT_PREFIX = EMAIL_SUBJECT_PREFIX
 # ADMIN
 # ------------------------------------------------------------------------------
 # Django Admin URL regex.
-ADMIN_URL = env("DJANGO_ADMIN_URL")
+ADMIN_URL = env("DJANGO_ADMIN_URL", default="admin/")
 
 # Anymail
 # ------------------------------------------------------------------------------
@@ -166,3 +172,20 @@ LOGGING = {
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+DISABLE_COLLECTSTATIC = env.bool("DISABLE_COLLECTSTATIC", default=False)
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MIDDLEWARE = [
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+]

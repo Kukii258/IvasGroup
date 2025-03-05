@@ -10,6 +10,8 @@ from django.views.generic import TemplateView
 from ivas import views, models
 
 urlpatterns = [
+    path("admin/", admin.site.urls),
+
     path("", views.home, name="home"),  # Change "index" to "home"
 
 
@@ -58,7 +60,15 @@ if settings.DEBUG:
         ),
         path("500/", default_views.server_error),
     ]
-    if "debug_toolbar" in settings.INSTALLED_APPS:
-        import debug_toolbar
 
-        urlpatterns = [path("__debug__/", include(debug_toolbar.urls))] + urlpatterns
+    if settings.DEBUG:
+        try:
+            import debug_toolbar
+
+            if "debug_toolbar" in settings.INSTALLED_APPS:
+                urlpatterns = [path("__debug__/", include(debug_toolbar.urls))] + urlpatterns
+        except ModuleNotFoundError:
+            pass  # Do nothing if debug_toolbar isn't installed
+
+    if settings.DEBUG:
+        urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
