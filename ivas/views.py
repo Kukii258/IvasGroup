@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-def index(request):
+def home(request):
     return render(request, "html/index.html")  # This looks for index.html in templates folder
 
 def galerija(request):

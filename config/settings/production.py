@@ -14,6 +14,9 @@ ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['*'])
 
 
 
+
+
+
 # GENERAL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
@@ -38,6 +41,7 @@ CACHES = {
         },
     },
 }
+SECURE_HSTS_SECONDS = 31536000  # 1 year
 
 # SECURITY
 # ------------------------------------------------------------------------------
@@ -56,7 +60,6 @@ CSRF_COOKIE_NAME = "__Secure-csrftoken"
 # https://docs.djangoproject.com/en/dev/topics/security/#ssl-https
 # https://docs.djangoproject.com/en/dev/ref/settings/#secure-hsts-seconds
 # TODO: set this to 60 seconds first and then to 518400 once you prove the former works
-SECURE_HSTS_SECONDS = 60
 # https://docs.djangoproject.com/en/dev/ref/settings/#secure-hsts-include-subdomains
 SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool(
     "DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS",
@@ -69,6 +72,9 @@ SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
     "DJANGO_SECURE_CONTENT_TYPE_NOSNIFF",
     default=True,
 )
+
+
+
 
 # STATIC & MEDIA
 # ------------------------
