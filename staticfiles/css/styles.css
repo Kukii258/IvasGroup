@@ -1334,3 +1334,110 @@ footer {
 .lg-actions .lg-prev:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  position: relative;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 5px 0;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+.mobile-menu-btn {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--light-text);
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+  nav {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(10, 10, 10, 0.98);
+    padding: 20px;
+    gap: 20px;
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  nav.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--light-text);
+  }
+
+  nav a:last-child {
+    border-bottom: none;
+  }
+
+  nav a::after {
+    display: none;
+  }
+
+  nav a:hover,
+  nav a.active {
+    background: rgba(233, 30, 99, 0.1);
+    color: var(--primary-color);
+  }
+
+  .mobile-menu-btn {
+    display: block;
+    padding: 10px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu-btn:hover {
+    color: var(--primary-color);
+  }
+
+  .mobile-menu-btn i {
+    transition: all 0.3s ease;
+  }
+
+  header {
+    padding: 0 20px;
+  }
+
+  /* Fix hero section margin for mobile */
+  .hero-slider {
+    margin-top: 0;
+  }
+}
