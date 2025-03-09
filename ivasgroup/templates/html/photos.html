@@ -17,7 +17,11 @@
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
-    <script type="module" src="{% static 'js/script.js' %}"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+
     <style>
       .album-header {
         background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -154,16 +158,16 @@
     <main>
       <section class="album-header">
         <div class="container">
-          <h1>Ultra Split 2024</h1>
-          <p>Kompletna rasvjeta, audio i video sustav za trodnevni festival na otvorenom</p>
+          <h1>Maska RTL 2024</h1>
+          <p>Kompletna rasvjeta, audio i video sustav</p>
           <div class="album-meta">
             <div class="album-meta-item">
               <i class="fas fa-calendar-alt"></i>
-              <span>Srpanj 2024</span>
+              <span>Travanj 2024</span>
             </div>
             <div class="album-meta-item">
               <i class="fas fa-map-marker-alt"></i>
-              <span>Stadion Park Mladeži, Split</span>
+              <span>Zagreb</span>
             </div>
             <div class="album-meta-item">
               <i class="fas fa-tag"></i>
@@ -175,7 +179,7 @@
 
       <section class="album-photos">
         <div class="container">
-          <a href="gallery.html" class="back-to-gallery">
+          <a href="{% url 'galerija' %}" class="back-to-gallery">
             <i class="fas fa-arrow-left"></i>
             <span>Nazad u Galeriju</span>
           </a>
