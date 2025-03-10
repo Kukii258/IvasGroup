@@ -93,7 +93,7 @@ STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
         "OPTIONS": {
-            "location": "/app/media/",
+            "location": "/media/",
         },
     },
     "staticfiles": {
@@ -101,7 +101,7 @@ STORAGES = {
     },
 }
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.getenv("MEDIA_ROOT", "/app/media")
+MEDIA_ROOT = os.getenv("MEDIA_ROOT", "/media")
 # EMAIL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email

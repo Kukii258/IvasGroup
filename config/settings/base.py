@@ -173,7 +173,7 @@ STATICFILES_FINDERS = [
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-root
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-url
-MEDIA_ROOT = os.getenv("MEDIA_ROOT", "/app/media")
+MEDIA_ROOT = os.getenv("MEDIA_ROOT", "/media")
 MEDIA_URL = "/media/"
 # TEMPLATES
 # ------------------------------------------------------------------------------
