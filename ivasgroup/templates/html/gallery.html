@@ -10,25 +10,43 @@
     <meta name="description" content="View our portfolio of event technology installations and projects.">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="{% static 'js/script.js' %}"></script>
+
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.3/dist/photoswipe.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module">
+      import PhotoSwipeLightbox from 'https://cdn.jsdelivr.net/npm/photoswipe@5.4.3/dist/photoswipe-lightbox.esm.min.js';
+      import PhotoSwipe from 'https://cdn.jsdelivr.net/npm/photoswipe@5.4.3/dist/photoswipe.esm.min.js';
+
+      const lightbox = new PhotoSwipeLightbox({
+        gallery: '#gallery',
+        children: 'a',
+        pswpModule: PhotoSwipe,
+        showHideAnimationType: 'fade',
+        imageClickAction: 'zoom',
+        tapAction: 'zoom',
+        bgOpacity: 0.9,
+      });
+
+      lightbox.init();
+    </script>
   </head>
   <body>
-    <div class="spotlight-container">
-      <div class="spotlight spotlight-1"></div>
-      <div class="spotlight spotlight-2"></div>
-      <div class="spotlight spotlight-3"></div>
-    </div>
 
-    <header>
+
+        <header>
       <div class="logo">
         <span class="logo-text">Ivas Group</span>
         <span class="logo-tagline">International Video Audio Solutions</span>
       </div>
       <nav>
-        <a href="{% url 'home' %}">Početna</a>
-        <a href="{% url 'galerija' %}" class="active" >Galerija</a>
+        <a href="{% url 'home' %}" class="active">Početna</a>
+        <a href="{% url 'galerija' %}" >Galerija</a>
         <a href="{% url 'about_us' %}">O Nama</a>
         <a href="{% url 'contact' %}">Kontakt</a>
       </nav>
@@ -40,140 +58,221 @@
     <main>
       <section class="page-header">
         <div class="page-header-content">
-          <h1>Naš rad</h1>
-          <p>Pregled naših nedavnih projekata i instalacija</p>
+          <h1>Our Work</h1>
+          <p>A showcase of our recent projects and installations</p>
         </div>
       </section>
 
       <section class="gallery">
         <div class="container">
-
-
-          <div class="albums-grid">
-            <div class="album-item" data-category="lighting production">
-              <div class="album-cover">
-                <img src="{% static 'images/pohotos/4859964f-6114-4579-ae46-48f45faafd31.jpg' %}" alt="Concert lighting setup">
-                <div class="album-count">
-                  <i class="fas fa-images"></i>
-                  <span>12 Photos</span>
-                </div>
-              </div>
-              <div class="album-info">
-                <h3>Maska RTL 2024</h3>
-                <p>Kompletna rasvjeta, audio i video sustav za trodnevni festival na otvorenom</p>
-                <a href="{% url 'photos' %}" class="btn btn-small">Otvori Album</a>
-              </div>
-            </div>
-<!--
-            <div class="album-item" data-category="audio video">
-              <div class="album-cover">
-                <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Concert venue">
-                <div class="album-count">
-                  <i class="fas fa-images"></i>
-                  <span>8 Photos</span>
-                </div>
-              </div>
-              <div class="album-info">
-                <h3>Corporate Conference</h3>
-                <p>Integrated AV solution for keynotes and breakout sessions</p>
-                <a href="album-corporate-conference.html" class="btn btn-small">View Album</a>
-              </div>
-            </div>
-
-            <div class="album-item" data-category="video lighting">
-              <div class="album-cover">
-                <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Corporate event">
-                <div class="album-count">
-                  <i class="fas fa-images"></i>
-                  <span>15 Photos</span>
-                </div>
-              </div>
-              <div class="album-info">
-                <h3>Product Launch Event</h3>
-                <p>Custom lighting and projection mapping for a major tech company</p>
-                <a href="album-product-launch.html" class="btn btn-small">View Album</a>
-              </div>
-            </div>
-
-            <div class="album-item" data-category="lighting audio">
-              <div class="album-cover">
-                <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Wedding venue">
-                <div class="album-count">
-                  <i class="fas fa-images"></i>
-                  <span>20 Photos</span>
-                </div>
-              </div>
-              <div class="album-info">
-                <h3>Wedding Reception</h3>
-                <p>Elegant lighting design and sound system for an upscale venue</p>
-                <a href="album-wedding-reception.html" class="btn btn-small">View Album</a>
-              </div>
-            </div>
-
-            <div class="album-item" data-category="production video">
-              <div class="album-cover">
-                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Theater production">
-                <div class="album-count">
-                  <i class="fas fa-images"></i>
-                  <span>18 Photos</span>
-                </div>
-              </div>
-              <div class="album-info">
-                <h3>Theater Production</h3>
-                <p>Complete technical production for a Broadway-style show</p>
-                <a href="album-theater-production.html" class="btn btn-small">View Album</a>
-              </div>
-            </div>
-
-            <div class="album-item" data-category="audio production">
-              <div class="album-cover">
-                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Music concert">
-                <div class="album-count">
-                  <i class="fas fa-images"></i>
-                  <span>14 Photos</span>
-                </div>
-              </div>
-              <div class="album-info">
-                <h3>Rock Concert</h3>
-                <p>Full audio and lighting setup for a stadium concert</p>
-                <a href="album-rock-concert.html" class="btn btn-small">View Album</a>
-              </div>
-            </div>
-
-            <div class="album-item" data-category="video lighting">
-              <div class="album-cover">
-                <img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fashion show">
-                <div class="album-count">
-                  <i class="fas fa-images"></i>
-                  <span>10 Photos</span>
-                </div>
-              </div>
-              <div class="album-info">
-                <h3>Fashion Show</h3>
-                <p>Runway lighting and video displays for a high-end fashion event</p>
-                <a href="album-fashion-show.html" class="btn btn-small">View Album</a>
-              </div>
-            </div>
-
-            <div class="album-item" data-category="production audio">
-              <div class="album-cover">
-                <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Festival stage">
-                <div class="album-count">
-                  <i class="fas fa-images"></i>
-                  <span>16 Photos</span>
-                </div>
-              </div>
-              <div class="album-info">
-                <h3>Summer Festival</h3>
-                <p>Multi-stage audio and lighting for a weekend festival</p>
-                <a href="album-summer-festival.html" class="btn btn-small">View Album</a>
-              </div>
-            </div>
-        -->
+          <div class="gallery-filters">
+            <button class="filter-btn" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="corporate">Corporate Events</button>
+            <button class="filter-btn" data-filter="concert">Concert and Touring</button>
+            <button class="filter-btn" data-filter="sport">Sporting Events</button>
+            <button class="filter-btn" data-filter="fashion">Fashion Events</button>
+            <button class="filter-btn" data-filter="ambition">Exhibitions</button> <!-- Assuming "Aximbitions" was meant to be "Exhibitions" -->
+            <button class="filter-btn" data-filter="broadcast">TV Broadcasting</button>
           </div>
+
+
+          <div class="gallery-grid" id="gallery">
+
+
+
+            {% for slika in slike %}
+
+            <a href="{{ slika.slika.url }}"
+               class="gallery-item"
+               data-category="{{slika.kategorija}}"
+               data-pswp-width="{{slika.sirina}}"
+               data-pswp-height="{{slika.visina}}"
+               target="_blank">
+              <img src="{{ slika.slika.url }}">
+              <div class="gallery-overlay">
+                <h3>{{slika.naslov}}</h3>
+                <p>{{slika.podnaslov}}</p>
+              </div>
+            </a>
+
+            {%endfor%}
+
+
+
+
+            <a href="{% static 'images/concert/4.jpg' %}"
+               class="gallery-item"
+               data-category="concert"
+               data-pswp-width="1500"
+               data-pswp-height="1000"
+               target="_blank">
+              <img src="{% static 'images/concert/4.jpg' %}">
+              <div class="gallery-overlay">
+                <h3>Annual Music Festival</h3>
+                <p>Complete stage lighting and sound system for a 3-day outdoor festival</p>
+              </div>
+            </a>
+
+            <a href="{% static 'images/concert/cetkovic.jpg' %}"
+               class="gallery-item"
+               data-category="concert"
+               data-pswp-width="1500"
+               data-pswp-height="1000"
+               target="_blank">
+              <img src="{% static 'images/concert/cetkovic.jpg' %}">
+              <div class="gallery-overlay">
+                <h3>Cetkovic</h3>
+                <p>Complete stage lighting and sound system for a 3-day outdoor festival</p>
+              </div>
+            </a>
+
+            <a href="{% static 'images/corporate/DSC00138.jpg' %}"
+               class="gallery-item"
+               data-category="corporate"
+               data-pswp-width="1500"
+               data-pswp-height="1000"
+               target="_blank">
+              <img src="{% static 'images/corporate/DSC00138.jpg' %}">
+              <div class="gallery-overlay">
+                <h3>Porsche</h3>
+                <p>Complete stage lighting and sound system</p>
+              </div>
+            </a>
+
+            <a href="{% static 'images/concert/europe-gallery-2018-8-1600x1066.jpg' %}"
+               class="gallery-item"
+               data-category="concert"
+               data-pswp-width="1500"
+               data-pswp-height="1000"
+               target="_blank">
+              <img src="{% static 'images/concert/europe-gallery-2018-8-1600x1066.jpg' %}">
+              <div class="gallery-overlay">
+                <h3>Ultra 2018</h3>
+                <p>Complete stage lighting and sound system for a 3-day outdoor festival</p>
+              </div>
+            </a>
+
+            <a href="{% static 'images/concert/europe-gallery-2018-10-1600x1066.jpg' %}"
+               class="gallery-item"
+               data-category="concert"
+               data-pswp-width="1500"
+               data-pswp-height="1000"
+               target="_blank">
+              <img src="{% static 'images/concert/europe-gallery-2018-10-1600x1066.jpg' %}">
+              <div class="gallery-overlay">
+                <h3>Ultra 2018</h3>
+                <p>Complete stage lighting and sound system for a 3-day outdoor festival</p>
+              </div>
+            </a>
+
+            <a href="{% static 'images/sport/fnc_arenazg_2.jpg' %}"
+               class="gallery-item"
+               data-category="sport"
+               data-pswp-width="1800"
+               data-pswp-height="1000"
+               target="_blank">
+              <img src="{% static 'images/sport/fnc_arenazg_2.jpg' %}">
+              <div class="gallery-overlay">
+                <h3>FNC Arena Zagreb</h3>
+                <p>Intense ring lighting and robust sound systems deliver a thrilling spectator experience at the Zagreb FNC Boxing event.</p>
+              </div>
+            </a>
+
+            <a href="{% static 'images/corporate/DSC00147.jpg' %}"
+               class="gallery-item"
+               data-category="corporate"
+               data-pswp-width="1500"
+               data-pswp-height="1000"
+               target="_blank">
+              <img src="{% static 'images/corporate/DSC00147.jpg' %}">
+              <div class="gallery-overlay">
+                <h3>Porsche</h3>
+                <p>Complete stage lighting and sound system</p>
+              </div>
+            </a>
+
+            <a href="{% static 'images/concert/IMG_20170825_201345.jpg' %}"
+               class="gallery-item"
+               data-category="concert"
+               data-pswp-width="1500"
+               data-pswp-height="1000"
+               target="_blank">
+              <img src="{% static 'images/concert/IMG_20170825_201345.jpg' %}">
+              <div class="gallery-overlay">
+                <h3>Ožujsko festival</h3>
+                <p>Complete stage lighting and sound system for a 3-day outdoor festival</p>
+              </div>
+            </a>
+
+            <a href="{% static 'images/concert/papaya.jpg' %}"
+               class="gallery-item"
+               data-category="concert"
+               data-pswp-width="1500"
+               data-pswp-height="1000"
+               target="_blank">
+              <img src="{% static 'images/concert/papaya.jpg' %}">
+              <div class="gallery-overlay">
+                <h3>Zrće Papaya 2018</h3>
+                <p>Complete stage lighting and sound system for a 3-day outdoor festival</p>
+              </div>
+            </a>
+
+            <a href="{% static 'images/corporate/DSC00162.jpg' %}"
+               class="gallery-item"
+               data-category="corporate"
+               data-pswp-width="1500"
+               data-pswp-height="1000"
+               target="_blank">
+              <img src="{% static 'images/corporate/DSC00162.jpg' %}">
+              <div class="gallery-overlay">
+                <h3>Porsche</h3>
+                <p>Complete stage lighting and sound system</p>
+              </div>
+            </a>
+
+
+            <a href="{% static 'images/sport/fnc_arenazg_1.jpg' %}"
+               class="gallery-item"
+               data-category="sport"
+               data-pswp-width="1800"
+               data-pswp-height="1000"
+               target="_blank">
+              <img src="{% static 'images/sport/fnc_arenazg_1.jpg' %}">
+              <div class="gallery-overlay">
+                <h3>FNC ARENA ZAGREB</h3>
+                <p>Powerful lighting and clear audio amplify the drama of every match at Zagreb's premier boxing event.</p>
+              </div>
+            </a>
+
+            <a href="{% static 'images/corporate/a.jpeg' %}"
+               class="gallery-item"
+               data-category="corporate"
+               data-pswp-width="1500"
+               data-pswp-height="1000"
+               target="_blank">
+              <img src="{% static 'images/corporate/a.jpeg' %}">
+              <div class="gallery-overlay">
+                <h3>Porsche</h3>
+                <p>Complete stage lighting and sound system</p>
+              </div>
+            </a>
+
+            <a href="{% static 'images/concert/prljavci.jpg' %}"
+               class="gallery-item"
+               data-category="concert"
+               data-pswp-width="1500"
+               data-pswp-height="1000"
+               target="_blank">
+              <img src="{% static 'images/concert/prljavci.jpg' %}">
+              <div class="gallery-overlay">
+                <h3>Prljavo Kazalište</h3>
+                <p>Complete stage lighting and sound system for a 3-day outdoor festival</p>
+              </div>
+            </a>
+
           </div>
+        </div>
       </section>
-
     </main>
 
     <footer>
@@ -217,5 +316,41 @@
         </div>
       </div>
     </footer>
+
+    <!-- PhotoSwipe template -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="pswp__bg"></div>
+      <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <div class="pswp__counter"></div>
+            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <button class="pswp__button pswp__button--share" title="Share"></button>
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+            <div class="pswp__share-tooltip"></div>
+          </div>
+          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
