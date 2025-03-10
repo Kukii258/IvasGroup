@@ -325,6 +325,8 @@ dump.rdb
 ### Project template
 ivasgroup/media/
 
+media
+
 .pytest_cache/
 .ipython/
 .env
