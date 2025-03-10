@@ -174,7 +174,7 @@ STATICFILES_FINDERS = [
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-root
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = '/media/album/'
 MEDIA_URL = '/media/'
 
 # TEMPLATES
