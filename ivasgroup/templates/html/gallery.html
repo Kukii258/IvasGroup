@@ -41,8 +41,9 @@
 
         <header>
       <div class="logo">
-        <span class="logo-text">Ivas Group</span>
-        <span class="logo-tagline">International Video Audio Solutions</span>
+        <a href="{% url 'home' %}">
+            <img style="height: 110px; width: auto" src="{% static 'images/index/logo_color.png' %}" alt="logo">
+        </a>
       </div>
       <nav>
         <a href="{% url 'home' %}">Početna</a>
@@ -275,11 +276,10 @@
       </section>
     </main>
 
-    <footer>
+        <footer>
       <div class="footer-content">
         <div class="footer-logo">
-          <span class="logo-text">Ivas Group</span>
-          <p>Oživljavamo vaše događaje uz najmodernija tehnološka rješenja.</p>
+          <img src="{% static 'images/index/logo_color.png' %}" alt="Ivas Group Logo" class="footer-logo-img">
           <div class="footer-social">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -288,16 +288,16 @@
           </div>
         </div>
         <div class="footer-links">
-          <h4>Brzi Linkovi</h4>
+          <h4 data-en="Quick Links" data-hr="Brzi Linkovi">Quick Links</h4>
           <ul>
-            <li><a href="{% url 'home' %}">Početna</a></li>
-            <li><a href="{% url 'galerija' %}">Galerija</a></li>
-            <li><a href="{% url 'about_us' %}">O nama</a></li>
-            <li><a href="{% url 'contact' %}">Kontakt</a></li>
+            <li><a href="{% url 'home' %}" data-en="Home" data-hr="Početna">Home</a></li>
+            <li><a href="{% url 'galerija' %}" data-en="Gallery" data-hr="Galerija">Gallery</a></li>
+            <li><a href="{% url 'about_us' %}" data-en="About Us" data-hr="O Nama">About Us</a></li>
+            <li><a href="{% url 'contact' %}" data-en="Contact" data-hr="Kontakt">Contact</a></li>
           </ul>
         </div>
         <div class="footer-contact">
-          <h4>Kontaktirajte nas</h4>
+          <h4 data-en="Contact Us" data-hr="Kontaktirajte nas">Contact Us</h4>
           <ul>
             <li><i class="fas fa-map-marker-alt"></i> Donje Svetice 40, 10000, Zagreb</li>
             <li><i class="fas fa-phone"></i> 01 4633 353</li>
@@ -307,11 +307,9 @@
       </div>
       <div class="footer-bottom">
         <div class="container">
-          <p>&copy; 2025 Ivas Group. Sva prava zadržana.</p>
+          <p data-en="&copy; 2025 Ivas Group. All rights reserved." data-hr="&copy; 2025 Ivas Grupa. Sva prava zadržana.">&copy; 2025 Ivas Group. All rights reserved.</p>
           <div class="footer-legal">
-            <a href="#">Pravila privatnosti</a>
-            <a href="#">Uvjeti korištenja</a>
-            <a href="#">Mapa web stranice</a>
+            <a href="#" >Web by Kukii</a>
           </div>
         </div>
       </div>

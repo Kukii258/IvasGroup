@@ -55,19 +55,21 @@
 
     <header>
       <div class="logo">
-        <span class="logo-text" data-en="Ivas Group" data-hr="Ivas Grupa">Ivas Group</span>
-        <span class="logo-tagline" data-en="Event Technology Solutions" data-hr="Tehnološka Rješenja za Događaje">Event Technology Solutions</span>
+        <a href="{% url 'home' %}">
+            <img style="height: 110px; width: auto" src="{% static 'images/index/logo_color.png' %}" alt="logo">
+        </a>
       </div>
       <nav>
-        <a href="{% url 'home' %}">Početna</a>
-        <a href="{% url 'galerija' %}" >Galerija</a>
-        <a href="{% url 'about_us' %}" class="active">O Nama</a>
-        <a href="{% url 'contact' %}">Kontakt</a>
+        <a href="{% url 'home' %}" data-en="Home" data-hr="Početna">Home</a>
+        <a href="{% url 'galerija' %}"  data-en="Gallery" data-hr="Galerija">Gallery</a>
+        <a href="{% url 'about_us' %}" class="active" data-en="About Us" data-hr="O Nama">About Us</a>
+        <a href="{% url 'contact' %}" data-en="Contact" data-hr="Kontakt">Contact</a>
         <div class="language-switcher">
           <button class="language-btn active" data-lang="en">EN</button>
           <button class="language-btn" data-lang="hr">HR</button>
         </div>
       </nav>
+
       <div class="mobile-menu-btn">
         <i class="fas fa-bars"></i>
       </div>
@@ -76,8 +78,8 @@
     <main>
       <section class="page-header">
         <div class="page-header-content">
-          <h1>O Nama</h1>
-          <p>Strastveni profesionalci s više od 15 godina iskustva u industriji</p>
+          <h1 data-en="About us" data-hr="O Nama">About us</h1>
+          <p data-en="Passionate professionals with over 25 years of experience in the industry." data-hr="Strastveni profesionalci s više od 25 godina iskustva u industriji">Passionate professionals with over 25 years of experience in the industry.</p>
         </div>
       </section>
 
@@ -85,10 +87,10 @@
         <div class="container">
           <div class="about-story">
             <div class="about-image">
-              <img src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Naš tim postavlja opremu">
+              <img src="{% static 'images/about/team.jpg' %}" alt="Naš tim">
             </div>
             <div class="about-text">
-              <h2 data-en="Our Story" data-hr="Naša Priča">Naša Priča</h2>
+              <h2 data-en="Our Story" data-hr="Naša Priča">Our Story</h2>
               <p data-en="For over 25 years, IVAS has been a leader in full production solutions, specializing in lighting, audio, and video, as well as trussing, rigging, and staging for all types of events. From local gatherings to international spectacles, our team delivers unparalleled expertise." data-hr="Više od 25 godina, IVAS je lider u kompletnim produkcijskim rješenjima, specijaliziranim za osvjetljenje, audio i video, kao i konstrukcije, montaže i postavljanje za sve vrste događaja. Od lokalnih skupova do međunarodnih spektakala, naš tim pruža neusporedivu ekspertizu.">For over 25 years, IVAS has been a leader in full production solutions, specializing in lighting, audio, and video, as well as trussing, rigging, and staging for all types of events. From local gatherings to international spectacles, our team delivers unparalleled expertise.</p>
               <p data-en="Our comprehensive services include location scouting, 3D rendering, and detailed event planning and management. Whether it’s a large music festival, a corporate event, or a live TV broadcast, IVAS tailors its offerings to meet the unique needs of each project." data-hr="Naše sveobuhvatne usluge uključuju pretraživanje lokacija, 3D modeliranje i detaljno planiranje i upravljanje događajima. Bilo da se radi o velikom glazbenom festivalu, korporativnom događaju ili izravnom TV prijenosu, IVAS prilagođava svoje usluge jedinstvenim potrebama svakog projekta.">Our comprehensive services include location scouting, 3D rendering, and detailed event planning and management. Whether it’s a large music festival, a corporate event, or a live TV broadcast, IVAS tailors its offerings to meet the unique needs of each project.</p>
               <p data-en="With a robust portfolio of over 2500 projects and 500 clients worldwide, IVAS continues to innovate and provide exceptional service in the evolving field of event production." data-hr="S čvrstim portfeljem od preko 2500 projekata i 500 klijenata širom svijeta, IVAS nastavlja inovirati i pružati iznimnu uslugu u evoluirajućem području produkcije događaja.">With a robust portfolio of over 2500 projects and 500 clients worldwide, IVAS continues to innovate and provide exceptional service in the evolving field of event production.</p>
@@ -97,18 +99,17 @@
 
           <div class="mission-values">
             <div class="mission">
-              <h2 data-en="Our Mission" data-hr="Naša Misija">Naša Misija</h2>
-              <p data-en="Our mission is to empower your events with superior technical support and creative solutions, ensuring high-quality production values that enhance every audience's experience. At IVAS, we commit to transforming each event into a memorable spectacle through meticulous planning and exceptional execution." data-hr="Naša misija je osnažiti vaše događaje vrhunskom tehničkom podrškom i kreativnim rješenjima, osiguravajući visoke produkcijske vrijednosti koje poboljšavaju iskustvo svakog posjetitelja. U IVAS-u se obvezujemo transformirati svaki događaj u nezaboravan spektakl kroz temeljito planiranje i iznimnu izvedbu.">Our mission is to empower your events with superior technical support and creative solutions, ensuring high-quality production values that enhance every audience's experience.</p>
+              <h2 data-en="Our Mission" data-hr="Naša Misija">Our Mission</h2>
+              <p data-en="Our mission is to empower your events with superior technical support and creative solutions, ensuring high-quality production values that enhance every audience's experience. At IVAS, we commit to transforming each event into a memorable spectacle through meticulous planning and exceptional execution." data-hr="Naša misija je osnažiti vaše događaje vrhunskom tehničkom podrškom i kreativnim rješenjima, osiguravajući visoke produkcijske vrijednosti koje poboljšavaju iskustvo svakog posjetitelja. U IVAS-u se obvezujemo transformirati svaki događaj u nezaboravan spektakl kroz temeljito planiranje i iznimnu izvedbu.">Our mission is to empower your events with superior technical support and creative solutions, ensuring high-quality production values that enhance every audience's experience. At IVAS, we commit to transforming each event into a memorable spectacle through meticulous planning and exceptional execution.</p>
             </div>
             <div class="values">
-              <h2 data-en="Our Values" data-hr="Naše Vrijednosti">Naše Vrijednosti</h2>
+              <h2 data-en="Our Values" data-hr="Naše Vrijednosti">Our Values</h2>
               <ul>
-                <li><i class="fas fa-check-circle"></i> <strong data-en="Excellence:" data-hr="Izvrsnost:">Excellence:</strong> <span data-en="Aiming for excellence in every project." data-hr="Težimo izvrsnosti u svakom projektu.">Aiming for excellence in every project.</span></li>
-                <li data-en="Innovation: Leading with innovation in event technology." data-hr="Inovacija: Predvodimo inovacijama u tehnologiji događaja."><i class="fas fa-check-circle"></i> <strong>Innovation:</strong> Leading with innovation in event technology.</li>
-                                <li><i class="fas fa-check-circle"></i> <strong data-en="Innovation:" data-hr="Inovacija:">Innovation:</strong> <span data-en="We embrace new technologies and creative approaches." data-hr="Prihvaćamo nove tehnologije i kreativne pristupe.">We embrace new technologies and creative approaches.</span></li>
-                <li data-en="Reliability: Reliable, on-time, and within budget." data-hr="Pouzdanost: Pouzdani, na vrijeme i unutar budžeta."><i class="fas fa-check-circle"></i> <strong>Reliability:</strong> Reliable, on-time, and within budget.</li>
-                <li data-en="Collaboration: Working closely with clients to surpass expectations." data-hr="Suradnja: Usko surađujemo s klijentima kako bi premašili očekivanja."><i class="fas fa-check-circle"></i> <strong>Collaboration:</strong> Working closely with clients to surpass expectations.</li>
-                <li data-en="Safety: Prioritizing safety in every setup." data-hr="Sigurnost: Sigurnost je prioritet u svakoj postavi."><i class="fas fa-check-circle"></i> <strong>Safety:</strong> Prioritizing safety in every setup.</li>
+                <li><i class="fas fa-check-circle" style="margin-top: 5px"></i> <strong style="margin-right: 10px;" data-en="Excellence:" data-hr="Izvrsnost:">Excellence:</strong> <span data-en="Aiming for excellence in every project." data-hr="Težimo izvrsnosti u svakom projektu.">Aiming for excellence in every project.</span></li>
+                <li><i class="fas fa-check-circle" style="margin-top: 5px"></i> <strong style="margin-right: 10px;" data-en="Innovation:" data-hr="Inovacija:">Innovation:</strong> <span data-en="Leading with innovation in event technology." data-hr="Predvodimo inovacijama u tehnologiji događaja.">Leading with innovation in event technology.</span></li>
+                <li><i class="fas fa-check-circle" style="margin-top: 5px"></i> <strong style="margin-right: 10px;" data-en="Reliability:" data-hr="Pouzdanost:">Reliability:</strong> <span data-en="Reliable, on-time, and within budget." data-hr="Pouzdani, na vrijeme i unutar budžeta.">Reliable, on-time, and within budget.</span></li>
+                <li><i class="fas fa-check-circle" style="margin-top: 5px"></i> <strong style="margin-right: 10px;" data-en="Collaboration:" data-hr="Suradnja:">Collaboration:</strong> <span data-en="Working closely with clients to surpass expectations." data-hr="Usko surađujemo s klijentima kako bi premašili očekivanja.">Working closely with clients to surpass expectations.</span></li>
+                <li><i class="fas fa-check-circle" style="margin-top: 5px"></i> <strong style="margin-right: 10px;" data-en="Safety:" data-hr="Sigurnost:">Safety:</strong> <span data-en="Prioritizing safety in every setup." data-hr="Sigurnost je prioritet u svakoj postavi.">Prioritizing safety in every setup.</span></li>
               </ul>
             </div>
           </div>
@@ -117,28 +118,28 @@
           <div class="stats-section">
             <div class="stat">
               <span class="stat-number">2500</span>
-              <span class="stat-label">Završenih Događaja</span>
+              <span class="stat-label" data-en="Completed Events" data-hr="Završenih Događaja" >Completed Events</span>
             </div>
             <div class="stat">
               <span class="stat-number">98%</span>
-              <span class="stat-label">Zadovoljstvo Klijenata</span>
+              <span class="stat-label" data-en="Client Satisfaction" data-hr="Zadovoljstvo Klijenata" >Client Satisfaction</span>
             </div>
             <div class="stat">
               <span class="stat-number">25+</span>
-              <span class="stat-label">Godina Iskustva</span>
+              <span class="stat-label" data-en="Years of Experience" data-hr="Godina Iskustva" >Years of Experience</span>
             </div>
             <div class="stat">
               <span class="stat-number">30+</span>
-              <span class="stat-label">Članova Tima</span>
+              <span class="stat-label" data-en="Team Members" data-hr="Članova Tima" >Team Members</span>
             </div>
           </div>
 
           <div class="team-section">
-            <h2>Naš Vodeći Tim</h2>
+            <h2 data-en="Our Leading Team" data-hr="Naš Vodeći Tim">Our Leading Team</h2>
             <div class="team-grid">
               <div class="team-member">
                 <div class="member-image">
-                  <img src="{% static 'images/about/avatar.jpg' %}" alt="John Smith">
+                  <img src="{% static 'images/about/avatar.jpg' %}" alt="">
                 </div>
                 <h3>Ime Prezime</h3>
                 <p class="member-title">TITULA</p>
@@ -146,7 +147,7 @@
               </div>
               <div class="team-member">
                 <div class="member-image">
-                  <img src="{% static 'images/about/avatar.jpg' %}" alt="Sarah Johnson">
+                  <img src="{% static 'images/about/avatar.jpg' %}" alt="">
                 </div>
                 <h3>Ime Prezime</h3>
                 <p class="member-title">TITULA</p>
@@ -154,7 +155,7 @@
               </div>
               <div class="team-member">
                 <div class="member-image">
-                  <img src="{% static 'images/about/avatar.jpg' %}" alt="Michael Chen">
+                  <img src="{% static 'images/about/avatar.jpg' %}" alt="">
                 </div>
                 <h3>Ime Prezime</h3>
                 <p class="member-title">TITULA</p>
@@ -162,7 +163,7 @@
               </div>
               <div class="team-member">
                 <div class="member-image">
-                  <img src="{% static 'images/about/avatar.jpg' %}" alt="Emily Rodriguez">
+                  <img src="{% static 'images/about/avatar.jpg' %}" alt="">
                 </div>
                 <h3>Ime Prezime</h3>
                 <p class="member-title">TITULA</p>
@@ -176,9 +177,9 @@
 
       <section class="cta-section">
         <div class="container">
-          <h2>Spremni podići svoj sljedeći event na višu razinu?</h2>
-          <p>Kontaktirajte nas danas za prilagođenu ponudu koja odgovara vašim specifičnim potrebama.</p>
-          <a href="{% url 'contact' %}" class="btn btn-primary">Kontaktirajte nas</a>
+          <h2 data-en="Ready to Elevate Your Next Event?" data-hr="Spremni podići svoj sljedeći event na višu razinu?">Ready to Elevate Your Next Event?</h2>
+          <p data-en="Contact us today for a customized quote that fits your specific needs" data-hr="Kontaktirajte nas danas za prilagođenu ponudu koja odgovara vašim specifičnim potrebama">Contact us today for a customized quote that fits your specific needs</p>
+          <a href="{% url 'contact' %}" class="btn btn-primary" data-en="Contact Us" data-hr="Kontaktirajte nas">Contact Us</a>
         </div>
       </section>
     </main>
@@ -186,8 +187,7 @@
     <footer>
       <div class="footer-content">
         <div class="footer-logo">
-          <span class="logo-text">Ivas Group</span>
-          <p>Oživljavamo vaše događaje uz najmodernija tehnološka rješenja.</p>
+          <img src="{% static 'images/index/logo_color.png' %}" alt="Ivas Group Logo" class="footer-logo-img">
           <div class="footer-social">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -196,16 +196,16 @@
           </div>
         </div>
         <div class="footer-links">
-          <h4>Brzi Linkovi</h4>
+          <h4 data-en="Quick Links" data-hr="Brzi Linkovi">Quick Links</h4>
           <ul>
-            <li><a href="{% url 'home' %}">Početna</a></li>
-            <li><a href="{% url 'galerija' %}">Galerija</a></li>
-            <li><a href="{% url 'about_us' %}">O nama</a></li>
-            <li><a href="{% url 'contact' %}">Kontakt</a></li>
+            <li><a href="{% url 'home' %}" data-en="Home" data-hr="Početna">Home</a></li>
+            <li><a href="{% url 'galerija' %}" data-en="Gallery" data-hr="Galerija">Gallery</a></li>
+            <li><a href="{% url 'about_us' %}" data-en="About Us" data-hr="O Nama">About Us</a></li>
+            <li><a href="{% url 'contact' %}" data-en="Contact" data-hr="Kontakt">Contact</a></li>
           </ul>
         </div>
         <div class="footer-contact">
-          <h4>Kontaktirajte nas</h4>
+          <h4 data-en="Contact Us" data-hr="Kontaktirajte nas">Contact Us</h4>
           <ul>
             <li><i class="fas fa-map-marker-alt"></i> Donje Svetice 40, 10000, Zagreb</li>
             <li><i class="fas fa-phone"></i> 01 4633 353</li>
@@ -215,11 +215,9 @@
       </div>
       <div class="footer-bottom">
         <div class="container">
-          <p>&copy; 2025 Ivas Group. Sva prava zadržana.</p>
+          <p data-en="&copy; 2025 Ivas Group. All rights reserved." data-hr="&copy; 2025 Ivas Grupa. Sva prava zadržana.">&copy; 2025 Ivas Group. All rights reserved.</p>
           <div class="footer-legal">
-            <a href="#">Pravila privatnosti</a>
-            <a href="#">Uvjeti korištenja</a>
-            <a href="#">Mapa web stranice</a>
+            <a href="#" >Web by Kukii</a>
           </div>
         </div>
       </div>

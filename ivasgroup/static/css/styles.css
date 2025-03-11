@@ -1440,6 +1440,26 @@ nav a.active::after {
   color: var(--light-text);
 }
 
+
+.footer-logo {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo-img {
+  margin-bottom: 15px;
+  max-width: 200px;
+  height: auto;
+}
+
+.footer-logo p {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  color: var(--gray-text);
+}
+
+
+
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
   nav {
@@ -1511,8 +1531,14 @@ nav a.active::after {
     margin-top: 0;
   }
 
-  .logo-footer{
-    margin-left: -202px;
+    .footer-legal {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
   }
-}
 
+ .footer-logo-img{
+   display: none;
+ }
+
+}

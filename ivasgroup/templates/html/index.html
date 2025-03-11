@@ -55,7 +55,9 @@
 
     <header>
       <div class="logo">
+        <a href="{% url 'home' %}">
             <img style="height: 110px; width: auto" src="{% static 'images/index/logo_color.png' %}" alt="logo">
+        </a>
       </div>
       <nav>
         <a href="{% url 'home' %}" class="active" data-en="Home" data-hr="Početna">Home</a>
@@ -206,7 +208,7 @@
     <footer>
       <div class="footer-content">
         <div class="footer-logo">
-          <img class="logo-footer" src="{% static 'images/index/logo_color.png' %}" alt="logo">
+          <img src="{% static 'images/index/logo_color.png' %}" alt="Ivas Group Logo" class="footer-logo-img">
           <div class="footer-social">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -236,9 +238,7 @@
         <div class="container">
           <p data-en="&copy; 2025 Ivas Group. All rights reserved." data-hr="&copy; 2025 Ivas Grupa. Sva prava zadržana.">&copy; 2025 Ivas Group. All rights reserved.</p>
           <div class="footer-legal">
-            <a href="#" data-en="Privacy Policy" data-hr="Pravila privatnosti">Privacy Policy</a>
-            <a href="#" data-en="Terms of Use" data-hr="Uvjeti korištenja">Terms of Use</a>
-            <a href="#" data-en="Site Map" data-hr="Mapa web stranice">Site Map</a>
+            <a href="#" >Web by Kukii</a>
           </div>
         </div>
       </div>
