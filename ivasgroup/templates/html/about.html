@@ -11,6 +11,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="{% static 'js/script.js' %}"></script>
+
+      <style>
+      .language-switcher {
+        display: flex;
+        gap: 10px;
+        margin-left: 20px;
+      }
+
+      .language-btn {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--light-text);
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+      }
+
+      .language-btn:hover,
+      .language-btn.active {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      @media (max-width: 768px) {
+        .language-switcher {
+          margin-left: 0;
+          margin-top: 15px;
+        }
+      }
+    </style>
+
+
   </head>
   <body>
     <div class="spotlight-container">
@@ -21,14 +55,18 @@
 
     <header>
       <div class="logo">
-        <span class="logo-text">Ivas Group</span>
-        <span class="logo-tagline">International Video Audio Solutions</span>
+        <span class="logo-text" data-en="Ivas Group" data-hr="Ivas Grupa">Ivas Group</span>
+        <span class="logo-tagline" data-en="Event Technology Solutions" data-hr="Tehnološka Rješenja za Događaje">Event Technology Solutions</span>
       </div>
       <nav>
         <a href="{% url 'home' %}">Početna</a>
         <a href="{% url 'galerija' %}" >Galerija</a>
         <a href="{% url 'about_us' %}" class="active">O Nama</a>
         <a href="{% url 'contact' %}">Kontakt</a>
+        <div class="language-switcher">
+          <button class="language-btn active" data-lang="en">EN</button>
+          <button class="language-btn" data-lang="hr">HR</button>
+        </div>
       </nav>
       <div class="mobile-menu-btn">
         <i class="fas fa-bars"></i>
@@ -50,33 +88,35 @@
               <img src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Naš tim postavlja opremu">
             </div>
             <div class="about-text">
-              <h2>Naša Priča</h2>
-              <p>Ivas Group je osnovan 2010. godine s jednostavnom misijom: pružiti vrhunska tehnička rješenja za događaje svih veličina. Ono što je započelo kao mali tim strastvenih tehničara preraslo je u punopravnu tvrtku za event tehnologiju s reputacijom izvrsnosti i inovacija.</p>
-              <p>Naše putovanje obilježeno je predanošću praćenju najnovijih tehnologija u event industriji, neprestano nadograđujući našu opremu i tehnike kako bismo našim klijentima pružili najimpresivnije i najpouzdanije rezultate.</p>
-              <p>Danas smo ponosni što smo pouzdan partner organizatorima događanja, produkcijskim tvrtkama i prostorima diljem zemlje, donoseći tehničku stručnost i kreativnu viziju u svaki projekt koji realiziramo.</p>
+              <h2 data-en="Our Story" data-hr="Naša Priča">Naša Priča</h2>
+              <p data-en="For over 25 years, IVAS has been a leader in full production solutions, specializing in lighting, audio, and video, as well as trussing, rigging, and staging for all types of events. From local gatherings to international spectacles, our team delivers unparalleled expertise." data-hr="Više od 25 godina, IVAS je lider u kompletnim produkcijskim rješenjima, specijaliziranim za osvjetljenje, audio i video, kao i konstrukcije, montaže i postavljanje za sve vrste događaja. Od lokalnih skupova do međunarodnih spektakala, naš tim pruža neusporedivu ekspertizu.">For over 25 years, IVAS has been a leader in full production solutions, specializing in lighting, audio, and video, as well as trussing, rigging, and staging for all types of events. From local gatherings to international spectacles, our team delivers unparalleled expertise.</p>
+              <p data-en="Our comprehensive services include location scouting, 3D rendering, and detailed event planning and management. Whether it’s a large music festival, a corporate event, or a live TV broadcast, IVAS tailors its offerings to meet the unique needs of each project." data-hr="Naše sveobuhvatne usluge uključuju pretraživanje lokacija, 3D modeliranje i detaljno planiranje i upravljanje događajima. Bilo da se radi o velikom glazbenom festivalu, korporativnom događaju ili izravnom TV prijenosu, IVAS prilagođava svoje usluge jedinstvenim potrebama svakog projekta.">Our comprehensive services include location scouting, 3D rendering, and detailed event planning and management. Whether it’s a large music festival, a corporate event, or a live TV broadcast, IVAS tailors its offerings to meet the unique needs of each project.</p>
+              <p data-en="With a robust portfolio of over 2500 projects and 500 clients worldwide, IVAS continues to innovate and provide exceptional service in the evolving field of event production." data-hr="S čvrstim portfeljem od preko 2500 projekata i 500 klijenata širom svijeta, IVAS nastavlja inovirati i pružati iznimnu uslugu u evoluirajućem području produkcije događaja.">With a robust portfolio of over 2500 projects and 500 clients worldwide, IVAS continues to innovate and provide exceptional service in the evolving field of event production.</p>
             </div>
-          </div>
+            </div>
 
           <div class="mission-values">
             <div class="mission">
-              <h2>Naša Misija</h2>
-              <p>Transformirati događaje kroz inovativna tehnološka rješenja koja stvaraju nezaboravna iskustva, nadmašuju očekivanja klijenata i postavljaju nove standarde u industriji.</p>
+              <h2 data-en="Our Mission" data-hr="Naša Misija">Naša Misija</h2>
+              <p data-en="Our mission is to empower your events with superior technical support and creative solutions, ensuring high-quality production values that enhance every audience's experience. At IVAS, we commit to transforming each event into a memorable spectacle through meticulous planning and exceptional execution." data-hr="Naša misija je osnažiti vaše događaje vrhunskom tehničkom podrškom i kreativnim rješenjima, osiguravajući visoke produkcijske vrijednosti koje poboljšavaju iskustvo svakog posjetitelja. U IVAS-u se obvezujemo transformirati svaki događaj u nezaboravan spektakl kroz temeljito planiranje i iznimnu izvedbu.">Our mission is to empower your events with superior technical support and creative solutions, ensuring high-quality production values that enhance every audience's experience.</p>
             </div>
             <div class="values">
-              <h2>Naše Vrijednosti</h2>
+              <h2 data-en="Our Values" data-hr="Naše Vrijednosti">Naše Vrijednosti</h2>
               <ul>
-                <li><i class="fas fa-check-circle"></i> <strong>Izvrsnost:</strong> Težimo savršenstvu u svakom aspektu našeg rada.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Inovacija:</strong> Prihvaćamo nove tehnologije i kreativne pristupe.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Pouzdanost:</strong> Uvijek ispunjavamo svoja obećanja.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Saradnja:</strong> Usko surađujemo s klijentima kako bismo ostvarili njihovu viziju.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Sigurnost:</strong> Prioritet nam je sigurnost našeg tima i sudionika događaja.</li>
+                <li><i class="fas fa-check-circle"></i> <strong data-en="Excellence:" data-hr="Izvrsnost:">Excellence:</strong> <span data-en="Aiming for excellence in every project." data-hr="Težimo izvrsnosti u svakom projektu.">Aiming for excellence in every project.</span></li>
+                <li data-en="Innovation: Leading with innovation in event technology." data-hr="Inovacija: Predvodimo inovacijama u tehnologiji događaja."><i class="fas fa-check-circle"></i> <strong>Innovation:</strong> Leading with innovation in event technology.</li>
+                                <li><i class="fas fa-check-circle"></i> <strong data-en="Innovation:" data-hr="Inovacija:">Innovation:</strong> <span data-en="We embrace new technologies and creative approaches." data-hr="Prihvaćamo nove tehnologije i kreativne pristupe.">We embrace new technologies and creative approaches.</span></li>
+                <li data-en="Reliability: Reliable, on-time, and within budget." data-hr="Pouzdanost: Pouzdani, na vrijeme i unutar budžeta."><i class="fas fa-check-circle"></i> <strong>Reliability:</strong> Reliable, on-time, and within budget.</li>
+                <li data-en="Collaboration: Working closely with clients to surpass expectations." data-hr="Suradnja: Usko surađujemo s klijentima kako bi premašili očekivanja."><i class="fas fa-check-circle"></i> <strong>Collaboration:</strong> Working closely with clients to surpass expectations.</li>
+                <li data-en="Safety: Prioritizing safety in every setup." data-hr="Sigurnost: Sigurnost je prioritet u svakoj postavi."><i class="fas fa-check-circle"></i> <strong>Safety:</strong> Prioritizing safety in every setup.</li>
               </ul>
             </div>
           </div>
 
+
           <div class="stats-section">
             <div class="stat">
-              <span class="stat-number">500+</span>
+              <span class="stat-number">2500</span>
               <span class="stat-label">Završenih Događaja</span>
             </div>
             <div class="stat">
@@ -84,11 +124,11 @@
               <span class="stat-label">Zadovoljstvo Klijenata</span>
             </div>
             <div class="stat">
-              <span class="stat-number">15+</span>
+              <span class="stat-number">25+</span>
               <span class="stat-label">Godina Iskustva</span>
             </div>
             <div class="stat">
-              <span class="stat-number">50+</span>
+              <span class="stat-number">30+</span>
               <span class="stat-label">Članova Tima</span>
             </div>
           </div>
@@ -184,5 +224,34 @@
         </div>
       </div>
     </footer>
+
+
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Language switcher functionality
+        const languageButtons = document.querySelectorAll('.language-btn');
+
+        function switchLanguage(lang) {
+          // Update all translatable elements
+          document.querySelectorAll('[data-' + lang + ']').forEach(element => {
+            element.textContent = element.getAttribute('data-' + lang);
+          });
+
+          // Update button states
+          languageButtons.forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+          });
+        }
+
+        languageButtons.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            switchLanguage(lang);
+          });
+        });
+      });
+    </script>
+
+
   </body>
 </html>

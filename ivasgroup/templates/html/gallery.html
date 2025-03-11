@@ -82,13 +82,13 @@
 
             {% for slika in slike %}
 
-            <a href="{{ slika.slika.url|lower }}"
+            <a href="{{ slika.slika.url }}"
                class="gallery-item"
                data-category="{{slika.kategorija}}"
                data-pswp-width="{{slika.sirina}}"
                data-pswp-height="{{slika.visina}}"
                target="_blank">
-              <img src="{{ slika.slika.url|lower }}">
+              <img src="{{ slika.slika.url }}">
               <div class="gallery-overlay">
                 <h3>{{slika.naslov}}</h3>
                 <p>{{slika.podnaslov}}</p>

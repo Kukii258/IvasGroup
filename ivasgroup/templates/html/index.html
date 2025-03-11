@@ -3,17 +3,48 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Ivas Group - Professional Event Technology Solutions</title>
+    <title data-en="Ivas Group - Professional Event Technology Solutions" data-hr="Ivas Group - Profesionalna Tehnološka Rješenja za Događaje">Ivas Group - Professional Event Technology Solutions</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Professional lighting, video, and audio equipment installation for events, concerts, and more.">
+    <meta name="description" content="Professional lighting, video, and audio equipment installation for events, concerts, and more." />
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
-  </head>
 
+    <style>
+      .language-switcher {
+        display: flex;
+        gap: 10px;
+        margin-left: 20px;
+      }
+
+      .language-btn {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--light-text);
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+      }
+
+      .language-btn:hover,
+      .language-btn.active {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      @media (max-width: 768px) {
+        .language-switcher {
+          margin-left: 0;
+          margin-top: 15px;
+        }
+      }
+    </style>
+  </head>
 
   <body>
     <div class="spotlight-container">
@@ -24,15 +55,19 @@
 
     <header>
       <div class="logo">
-        <span class="logo-text">Ivas Group</span>
-        <span class="logo-tagline">International Video Audio Solutions</span>
+            <img style="height: 110px; width: auto" src="{% static 'images/index/logo_color.png' %}" alt="logo">
       </div>
       <nav>
-        <a href="{% url 'home' %}" class="active">Početna</a>
-        <a href="{% url 'galerija' %}" >Galerija</a>
-        <a href="{% url 'about_us' %}">O Nama</a>
-        <a href="{% url 'contact' %}">Kontakt</a>
+        <a href="{% url 'home' %}" class="active" data-en="Home" data-hr="Početna">Home</a>
+        <a href="{% url 'galerija' %}" data-en="Gallery" data-hr="Galerija">Gallery</a>
+        <a href="{% url 'about_us' %}" data-en="About Us" data-hr="O Nama">About Us</a>
+        <a href="{% url 'contact' %}" data-en="Contact" data-hr="Kontakt">Contact</a>
+        <div class="language-switcher">
+          <button class="language-btn active" data-lang="en">EN</button>
+          <button class="language-btn" data-lang="hr">HR</button>
+        </div>
       </nav>
+
       <div class="mobile-menu-btn">
         <i class="fas fa-bars"></i>
       </div>
@@ -40,38 +75,38 @@
 
     <main>
       <!-- Hero Slider Section -->
-            <section class="hero-slider">
+      <section class="hero-slider">
         <div class="swiper">
           <div class="swiper-wrapper">
-          <div class="swiper-slide" style="background-image: url('{% static "images/index/1.jpg" %}')">
+            <div class="swiper-slide" style="background-image: url('{% static "images/index/1.jpg" %}')">
               <div class="slide-content">
-                <h1>Oživljavamo Vaše Događaje</h1>
-                <p>Profesionalna rješenja za rasvjetu, video i zvuk za nezaboravna iskustva</p>
+                <h1 data-en="Bringing Your Events to Life" data-hr="Oživljavamo Vaše Događaje">Bringing Your Events to Life</h1>
+                <p data-en="Professional lighting, video, and audio solutions for unforgettable experiences" data-hr="Profesionalna rješenja za rasvjetu, video i zvuk za nezaboravna iskustva">Professional lighting, video, and audio solutions for unforgettable experiences</p>
               </div>
             </div>
-              <div class="swiper-slide" style="background-image: url('{% static "images/index/2.jpg" %}')">
+            <div class="swiper-slide" style="background-image: url('{% static "images/index/2.jpg" %}')">
               <div class="slide-content">
-                <h1>Najsuvremenija Tehnologija</h1>
-                <p>Vrhunska oprema za događaje bilo koje veličine</p>
+                <h1 data-en="State-of-the-Art Technology" data-hr="Najsuvremenija Tehnologija">State-of-the-Art Technology</h1>
+                <p data-en="Top-tier equipment for events of any size" data-hr="Vrhunska oprema za događaje bilo koje veličine">Top-tier equipment for events of any size</p>
               </div>
             </div>
-              <div class="swiper-slide" style="background-image: url('{% static "images/index/3.jpg" %}')">
+            <div class="swiper-slide" style="background-image: url('{% static "images/index/3.jpg" %}')">
               <div class="slide-content">
-                <h1>Stručna Tehnička Produkcija</h1>
-                <p>Naš tim osigurava besprijekornu izvedbu od postavljanja do demontaže</p>
+                <h1 data-en="Expert Technical Production" data-hr="Stručna Tehnička Produkcija">Expert Technical Production</h1>
+                <p data-en="Our team ensures flawless execution from setup to breakdown" data-hr="Naš tim osigurava besprijekornu izvedbu od postavljanja do demontaže">Our team ensures flawless execution from setup to breakdown</p>
               </div>
             </div>
-              <div class="swiper-slide" style="background-image: url('{% static "images/index/4.jpg" %}')">
+            <div class="swiper-slide" style="background-image: url('{% static "images/index/4.jpg" %}')">
               <div class="slide-content">
-                <h1>Kreativna Rješenja</h1>
-                <p>Prilagođeni dizajni koji vašu viziju pretvaraju u stvarnost</p>
+                <h1 data-en="Creative Solutions" data-hr="Kreativna Rješenja">Creative Solutions</h1>
+                <p data-en="Custom designs that turn your vision into reality" data-hr="Prilagođeni dizajni koji vašu viziju pretvaraju u stvarnost">Custom designs that turn your vision into reality</p>
               </div>
             </div>
-              <div class="swiper-slide" style="background-image: url('{% static "images/index/5.jpg" %}')">
+            <div class="swiper-slide" style="background-image: url('{% static "images/index/5.jpg" %}')">
               <div class="slide-content">
-                <h1>Tražimo Pojačanje</h1>
-                <p>Pridružite se našem timu stručnjaka za event tehnologiju</p>
-                <a href="{% url 'contact' %}" class="btn btn-primary">Pridruži nam se!</a>
+                <h1 data-en="We're Hiring" data-hr="Tražimo Pojačanje">We're Hiring</h1>
+                <p data-en="Join our team of event technology experts" data-hr="Pridružite se našem timu stručnjaka za event tehnologiju">Join our team of event technology experts</p>
+                <a href="{% url 'contact' %}" class="btn btn-primary" data-en="Join Us!" data-hr="Pridruži nam se!">Join Us!</a>
               </div>
             </div>
           </div>
@@ -81,52 +116,50 @@
         </div>
       </section>
 
-
+      <!-- Services Section -->
       <section id="services" class="services">
         <div class="section-header">
-          <h2>Naše Usluge</h2>
-          <p>Sveobuhvatna rješenja event tehnologije prilagođena vašim potrebama</p>
+          <h2 data-en="Our Services" data-hr="Naše Usluge">Our Services</h2>
+          <p data-en="Comprehensive event technology solutions tailored to your needs" data-hr="Sveobuhvatna rješenja event tehnologije prilagođena vašim potrebama">Comprehensive event technology solutions tailored to your needs</p>
         </div>
         <div class="services-grid">
           <div class="service-card">
             <div class="service-icon">
               <i class="fas fa-lightbulb"></i>
             </div>
-            <h3>Dizajn i Instalacija Rasvjete</h3>
-            <p>Prilagođena rasvjetna rješenja koja stvaraju savršenu atmosferu za vaš događaj, od suptilne ambijentalne rasvjete do dinamičnih scenskih produkcija.</p>
+            <h3 data-en="Lighting Design and Installation" data-hr="Dizajn i Instalacija Rasvjete">Lighting Design and Installation</h3>
+            <p data-en="Customized lighting solutions that create the perfect atmosphere for your event, from subtle ambient lighting to dynamic stage productions" data-hr="Prilagođena rasvjetna rješenja koja stvaraju savršenu atmosferu za vaš događaj, od suptilne ambijentalne rasvjete do dinamičnih scenskih produkcija">Customized lighting solutions that create the perfect atmosphere for your event, from subtle ambient lighting to dynamic stage productions</p>
           </div>
           <div class="service-card">
             <div class="service-icon">
               <i class="fas fa-video"></i>
             </div>
-            <h3>Video Sustavi</h3>
-            <p>HD video zidovi, projekcijsko mapiranje i zaslonska rješenja koja pružaju zadivljujuće vizualne efekte i povećavaju angažman publike.</p>
+            <h3 data-en="Video Systems" data-hr="Video Sustavi">Video Systems</h3>
+            <p data-en="HD video walls, projection mapping, and screen solutions that deliver stunning visual effects and increase audience engagement" data-hr="HD video zidovi, projekcijsko mapiranje i zaslonska rješenja koja pružaju zadivljujuće vizualne efekte i povećavaju angažman publike">HD video walls, projection mapping, and screen solutions that deliver stunning visual effects and increase audience engagement</p>
           </div>
           <div class="service-card">
             <div class="service-icon">
               <i class="fas fa-volume-up"></i>
             </div>
-            <h3>Audio Inženjering</h3>
-            <p>Kristalno čisti audio sustavi dizajnirani i kalibrirani za savršenu akustiku u bilo kojem prostoru, osiguravajući da se vaša poruka čuje.</p>
+            <h3 data-en="Audio Engineering" data-hr="Audio Inženjering">Audio Engineering</h3>
+            <p data-en="Crystal clear audio systems designed and calibrated for perfect acoustics in any space, ensuring your message is heard" data-hr="Kristalno čisti audio sustavi dizajnirani i kalibrirani za savršenu akustiku u bilo kojem prostoru, osiguravajući da se vaša poruka čuje">Crystal clear audio systems designed and calibrated for perfect acoustics in any space, ensuring your message is heard</p>
           </div>
           <div class="service-card">
             <div class="service-icon">
               <i class="fas fa-cogs"></i>
             </div>
-            <h3>Tehnička Produkcija</h3>
-            <p>Kompletne usluge event produkcije uključujući najam opreme, postavljanje, upravljanje i demontažu uz stručne tehničare.</p>
+            <h3 data-en="Technical Production" data-hr="Tehnička Produkcija">Technical Production</h3>
+            <p data-en="Complete event production services including equipment rental, setup, management, and teardown with expert technicians" data-hr="Kompletne usluge event produkcije uključujući najam opreme, postavljanje, upravljanje i demontažu uz stručne tehničare">Complete event production services including equipment rental, setup, management, and teardown with expert technicians</p>
           </div>
         </div>
       </section>
 
-
       <!-- Sponsors Section -->
       <section class="sponsors-section">
         <div class="sponsors-header">
-          <h2>Naši Pouzdani Partneri</h2>
-          <p>Surađujemo s vodećim brendovima u industriji kako bismo isporučili vrhunska event iskustva</p>
+          <h2 data-en="Our Trusted Partners" data-hr="Naši Pouzdani Partneri">Our Trusted Partners</h2>
+          <p data-en="We collaborate with leading brands in the industry to deliver top-tier event experiences" data-hr="Surađujemo s vodećim brendovima u industriji kako bismo isporučili vrhunska event iskustva">We collaborate with leading brands in the industry to deliver top-tier event experiences</p>
         </div>
-
         <div class="sponsors-grid">
           <div class="sponsor-item">
             <img src="{% static 'images/index/MA-lightning.png' %}" alt="MA-lightning">
@@ -163,19 +196,17 @@
 
       <section class="cta-section">
         <div class="container">
-          <h2>Spremni podići svoj sljedeći event na višu razinu?</h2>
-          <p>Kontaktirajte nas danas za prilagođenu ponudu koja odgovara vašim specifičnim potrebama.</p>
-          <a href="{% url 'contact' %}" class="btn btn-primary">Kontaktirajte nas</a>
+          <h2 data-en="Ready to Elevate Your Next Event?" data-hr="Spremni podići svoj sljedeći event na višu razinu?">Ready to Elevate Your Next Event?</h2>
+          <p data-en="Contact us today for a customized quote that fits your specific needs" data-hr="Kontaktirajte nas danas za prilagođenu ponudu koja odgovara vašim specifičnim potrebama">Contact us today for a customized quote that fits your specific needs</p>
+          <a href="{% url 'contact' %}" class="btn btn-primary" data-en="Contact Us" data-hr="Kontaktirajte nas">Contact Us</a>
         </div>
       </section>
-
     </main>
 
     <footer>
       <div class="footer-content">
         <div class="footer-logo">
-          <span class="logo-text">Ivas Group</span>
-          <p>Oživljavamo vaše događaje uz najmodernija tehnološka rješenja.</p>
+          <img class="logo-footer" src="{% static 'images/index/logo_color.png' %}" alt="logo">
           <div class="footer-social">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -184,16 +215,16 @@
           </div>
         </div>
         <div class="footer-links">
-          <h4>Brzi Linkovi</h4>
+          <h4 data-en="Quick Links" data-hr="Brzi Linkovi">Quick Links</h4>
           <ul>
-            <li><a href="{% url 'home' %}">Početna</a></li>
-            <li><a href="{% url 'galerija' %}">Galerija</a></li>
-            <li><a href="{% url 'about_us' %}">O nama</a></li>
-            <li><a href="{% url 'contact' %}">Kontakt</a></li>
+            <li><a href="{% url 'home' %}" data-en="Home" data-hr="Početna">Home</a></li>
+            <li><a href="{% url 'galerija' %}" data-en="Gallery" data-hr="Galerija">Gallery</a></li>
+            <li><a href="{% url 'about_us' %}" data-en="About Us" data-hr="O Nama">About Us</a></li>
+            <li><a href="{% url 'contact' %}" data-en="Contact" data-hr="Kontakt">Contact</a></li>
           </ul>
         </div>
         <div class="footer-contact">
-          <h4>Kontaktirajte nas</h4>
+          <h4 data-en="Contact Us" data-hr="Kontaktirajte nas">Contact Us</h4>
           <ul>
             <li><i class="fas fa-map-marker-alt"></i> Donje Svetice 40, 10000, Zagreb</li>
             <li><i class="fas fa-phone"></i> 01 4633 353</li>
@@ -203,15 +234,40 @@
       </div>
       <div class="footer-bottom">
         <div class="container">
-          <p>&copy; 2025 Ivas Group. Sva prava zadržana.</p>
+          <p data-en="&copy; 2025 Ivas Group. All rights reserved." data-hr="&copy; 2025 Ivas Grupa. Sva prava zadržana.">&copy; 2025 Ivas Group. All rights reserved.</p>
           <div class="footer-legal">
-            <a href="#">Pravila privatnosti</a>
-            <a href="#">Uvjeti korištenja</a>
-            <a href="#">Mapa web stranice</a>
+            <a href="#" data-en="Privacy Policy" data-hr="Pravila privatnosti">Privacy Policy</a>
+            <a href="#" data-en="Terms of Use" data-hr="Uvjeti korištenja">Terms of Use</a>
+            <a href="#" data-en="Site Map" data-hr="Mapa web stranice">Site Map</a>
           </div>
         </div>
       </div>
     </footer>
 
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Language switcher functionality
+        const languageButtons = document.querySelectorAll('.language-btn');
+
+        function switchLanguage(lang) {
+          // Update all translatable elements
+          document.querySelectorAll('[data-' + lang + ']').forEach(element => {
+            element.textContent = element.getAttribute('data-' + lang);
+          });
+
+          // Update button states
+          languageButtons.forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+          });
+        }
+
+        languageButtons.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            switchLanguage(lang);
+          });
+        });
+      });
+    </script>
   </body>
 </html>

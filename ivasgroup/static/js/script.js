@@ -204,4 +204,32 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 
+
+
+
+      document.addEventListener('DOMContentLoaded', function() {
+        // Language switcher functionality
+        const languageButtons = document.querySelectorAll('.language-btn');
+
+        function switchLanguage(lang) {
+          // Update all translatable elements
+          document.querySelectorAll('[data-' + lang + ']').forEach(element => {
+            element.textContent = element.getAttribute('data-' + lang);
+          });
+
+          // Update button states
+          languageButtons.forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+          });
+        }
+
+        languageButtons.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            switchLanguage(lang);
+          });
+        });
+      });
+
 });
+

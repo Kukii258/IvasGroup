@@ -1511,5 +1511,8 @@ nav a.active::after {
     margin-top: 0;
   }
 
+  .logo-footer{
+    margin-left: -202px;
+  }
 }
 
