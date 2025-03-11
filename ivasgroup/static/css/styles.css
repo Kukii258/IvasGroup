@@ -1271,6 +1271,42 @@ footer {
   color: var(--primary-color);
 }
 
+
+/* Language buttons */
+.language-switcher {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.language-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--light-text);
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.language-btn:hover,
+.language-btn.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .language-switcher {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+}
+
+
+
+
+
 /* Animations */
 @keyframes fadeInUp {
   from {
@@ -1488,7 +1524,6 @@ nav a.active::after {
   margin-bottom: 20px;
   color: var(--gray-text);
 }
-
 
 
 /* Mobile Menu Styles */
