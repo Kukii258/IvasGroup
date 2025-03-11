@@ -25,18 +25,18 @@
             <img style="height: 110px; width: auto" src="{% static 'images/index/logo_color.png' %}" alt="logo">
         </a>
       </div>
-      <nav>
-        <a href="{% url 'home' %}" >Početna</a>
-        <a href="{% url 'galerija' %}" >Galerija</a>
-        <a href="{% url 'about_us' %}">O Nama</a>
-        <a href="{% url 'contact' %}" class="active">Kontakt</a>
 
+      <nav>
+        <a href="{% url 'home' %}" data-en="Home" data-hr="Početna">Home</a>
+        <a href="{% url 'galerija' %}" data-en="Gallery" data-hr="Galerija">Gallery</a>
+        <a href="{% url 'about_us' %}" data-en="About Us" data-hr="O Nama">About Us</a>
+        <a href="{% url 'contact' %}" class="active" data-en="Contact" data-hr="Kontakt">Contact</a>
         <div class="language-switcher">
           <button class="language-btn active" data-lang="en">EN</button>
           <button class="language-btn" data-lang="hr">HR</button>
         </div>
-
       </nav>
+
       <div class="mobile-menu-btn">
         <i class="fas fa-bars"></i>
       </div>
@@ -45,8 +45,8 @@
     <main>
       <section class="page-header">
         <div class="page-header-content">
-          <h1>Kontaktirajte Nas</h1>
-          <p>Spremni ste oživjeti svoju viziju događaja? Kontaktirajte nas danas.</p>
+          <h1 data-en="Contact Us" data-hr="Kontaktirajte Nas">Contact Us</h1>
+          <p data-en="Ready to bring your event vision to life? Contact us today." data-hr="Spremni ste oživjeti svoju viziju događaja? Kontaktirajte nas danas.">Ready to bring your event vision to life? Contact us today.</p>
         </div>
       </section>
 
@@ -54,53 +54,53 @@
         <div class="container">
           <div class="contact-grid">
             <div class="contact-form-container">
-              <h2>Pošaljite Nam Poruku</h2>
+              <h2 data-en="Send Us a Message" data-hr="Pošaljite Nam Poruku" >Send Us a Message</h2>
               <form id="contactForm" class="contact-form">
                 <div class="form-group">
-                  <label for="name">Ime</label>
+                  <label for="name" data-en="Name" data-hr="Ime" >Name</label>
                   <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                  <label for="email">Email</label>
+                  <label for="email" data-en="Email" data-hr="Email" >Email</label>
                   <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                  <label for="phone">Telefon</label>
+                  <label for="phone" data-en="Phone Number" data-hr="Broj Telefona" >Phone Number</label>
                   <input type="tel" id="phone" name="phone">
                 </div>
                 <div class="form-group">
-                  <label for="eventType">Vrsta Događaja</label>
+                  <label for="eventType" data-en="Event Type" data-hr="Vrsta Događaja" >Event Type</label>
                   <select id="eventType" name="eventType">
-                    <option value="">Odaberite vrstu događaja</option>
-                    <option value="concert">Koncert/Nastup</option>
-                    <option value="corporate">Poslovni Događaj</option>
-                    <option value="wedding">Vjenčanje</option>
-                    <option value="festival">Festival</option>
-                    <option value="other">Drugo</option>
+                    <option value="" data-en="Select the Event Type" data-hr="Odaberite vrstu događaja" >Select the Event Type</option>
+                    <option value="concert" data-en="Concert/Performance" data-hr="Koncert/Nastup" >Concert/Performance</option>
+                    <option value="corporate" data-en="Business Event" data-hr="Poslovni Događaj" >Business Event</option>
+                    <option value="wedding" data-en="Wedding" data-hr="Vjenčanje">Wedding</option>
+                    <option value="festival" data-en="Festival" data-hr="Festival">Festival</option>
+                    <option value="other" data-en="Other" data-hr="Drugo">Other</option>
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="message">Poruka</label>
+                  <label for="message" data-en="Message" data-hr="Poruka" >Message</label>
                   <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Pošalji Poruku</button>
+                <button type="submit" class="btn btn-primary" data-en="Send Message" data-hr="Pošalji Poruku">Send Message</button>
               </form>
             </div>
 
             <div class="contact-info-container">
-              <h2>Kontakt Informacije</h2>
+              <h2 data-en="Contact Information" data-hr="Kontakt Informacije" >Contact Information</h2>
               <div class="contact-info">
                 <div class="info-item">
                   <i class="fas fa-map-marker-alt"></i>
                   <div>
-                    <h3>Naša Lokacija</h3>
+                    <h3 data-en="Our Location" data-hr="Naša Lokacija" >Our Location</h3>
                     <p>Donje Svetice 40<br>10000 Zagreb</p>
                   </div>
                 </div>
                 <div class="info-item">
                   <i class="fas fa-phone"></i>
                   <div>
-                    <h3>Telefon</h3>
+                    <h3 data-en="Phone Number" data-hr="Broj Telefona" >Phone Number</h3>
                     <p>01 4633 353</p>
                   </div>
                 </div>
@@ -114,14 +114,14 @@
                 <div class="info-item">
                   <i class="fas fa-clock"></i>
                   <div>
-                    <h3>Radno Vrijeme</h3>
-                    <p>Ponedjeljak - Petak: 8:00 - 16:00<br>Nedjelja: Zatvoreno</p>
+                    <h3 data-en="Working Hours" data-hr="Radno Vrijeme" >Working Hours</h3>
+                    <p data-en="Monday - Friday: 8:00 - 16:00" data-hr="Ponedeljak - Petak: 8:00 - 16:00" >Monday - Friday: 8:00 - 16:00<br data-en="Sunday: Closed" data-hr="Nedelja: Zatvoreno" >Sunday: Closed</p>
                   </div>
                 </div>
               </div>
 
               <div class="social-links-container">
-                <h3>Povežite Se S Nama</h3>
+                <h3 data-en="Connect With Us" data-hr="Povežite se s Nama" >Connect With Us</h3>
                 <div class="social-links">
                   <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                   <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -133,7 +133,7 @@
           </div>
 
           <div class="map-container">
-            <h2>Pronađite Nas</h2>
+            <h2 data-en="Find Us" data-hr="Pronađite Nas">Find Us</h2>
             <div class="map">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2781.3267909929623!2d16.0143912!3d45.804713299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d63476924ddd%3A0x435dfee3fc201fe!2sIvas%20Grupa%20d.o.o.!5e0!3m2!1shr!2shr!4v1741005096479!5m2!1shr!2shr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>

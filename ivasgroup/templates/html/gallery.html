@@ -46,16 +46,14 @@
         </a>
       </div>
       <nav>
-        <a href="{% url 'home' %}">Početna</a>
-        <a href="{% url 'galerija' %}" class="active">Galerija</a>
-        <a href="{% url 'about_us' %}">O Nama</a>
-        <a href="{% url 'contact' %}">Kontakt</a>
-
+        <a href="{% url 'home' %}"  data-en="Home" data-hr="Početna">Home</a>
+        <a href="{% url 'galerija' %}" class="active" data-en="Gallery" data-hr="Galerija">Gallery</a>
+        <a href="{% url 'about_us' %}" data-en="About Us" data-hr="O Nama">About Us</a>
+        <a href="{% url 'contact' %}" data-en="Contact" data-hr="Kontakt">Contact</a>
         <div class="language-switcher">
           <button class="language-btn active" data-lang="en">EN</button>
           <button class="language-btn" data-lang="hr">HR</button>
         </div>
-
       </nav>
       <div class="mobile-menu-btn">
         <i class="fas fa-bars"></i>
@@ -65,21 +63,21 @@
     <main>
       <section class="page-header">
         <div class="page-header-content">
-          <h1>Our Work</h1>
-          <p>A showcase of our recent projects and installations</p>
+          <h1 data-en="Our Work" data-hr="Naši Radovi" >Our Work</h1>
+          <p data-en="A showcase of our recent projects and installations" data-hr="Prikaz naših nedavnih projekata i instalacija" >A showcase of our recent projects and installations</p>
         </div>
       </section>
 
       <section class="gallery">
         <div class="container">
           <div class="gallery-filters">
-            <button class="filter-btn" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="corporate">Corporate Events</button>
-            <button class="filter-btn" data-filter="concert">Concert and Touring</button>
-            <button class="filter-btn" data-filter="sport">Sporting Events</button>
-            <button class="filter-btn" data-filter="fashion">Fashion Events</button>
-            <button class="filter-btn" data-filter="ambition">Exhibitions</button> <!-- Assuming "Aximbitions" was meant to be "Exhibitions" -->
-            <button class="filter-btn" data-filter="broadcast">TV Broadcasting</button>
+            <button class="filter-btn" data-filter="all" data-en="All" data-hr="Sve">All</button>
+            <button class="filter-btn" data-filter="corporate" data-en="Corporate Events" data-hr="Korporativni Događaji">Corporate Events</button>
+            <button class="filter-btn" data-filter="concert" data-en="Concert and Touring" data-hr="Koncerti i Turneje">Concert and Touring</button>
+            <button class="filter-btn" data-filter="sport" data-en="Sporting Events" data-hr="Sportski Događaji">Sporting Events</button>
+            <button class="filter-btn" data-filter="fashion" data-en="Fashion Events" data-hr="Modni Događaji">Fashion Events</button>
+            <button class="filter-btn" data-filter="ambition" data-en="Exhibitions" data-hr="Izložbe">Exhibitions</button>
+            <button class="filter-btn" data-filter="broadcast" data-en="TV Broadcasting" data-hr="TV Emitiranje">TV Broadcasting</button>
           </div>
 
 
