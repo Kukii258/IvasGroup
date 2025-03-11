@@ -82,13 +82,13 @@
 
             {% for slika in slike %}
 
-            <a href="{{ slika.slika.url }}"
+            <a href="{{ slika.slika.url|lower }}"
                class="gallery-item"
                data-category="{{slika.kategorija}}"
                data-pswp-width="{{slika.sirina}}"
                data-pswp-height="{{slika.visina}}"
                target="_blank">
-              <img src="{{ slika.slika.url }}">
+              <img src="{{ slika.slika.url|lower }}">
               <div class="gallery-overlay">
                 <h3>{{slika.naslov}}</h3>
                 <p>{{slika.podnaslov}}</p>
@@ -165,13 +165,13 @@
               </div>
             </a>
 
-            <a href="{% static 'images/sport/fnc_arenazg_2.jpg' %}"
+            <a href="{% static 'images/sport/fnc_arenazg_2.JPG' %}"
                class="gallery-item"
                data-category="sport"
                data-pswp-width="1800"
                data-pswp-height="1000"
                target="_blank">
-              <img src="{% static 'images/sport/fnc_arenazg_2.jpg' %}">
+              <img src="{% static 'images/sport/fnc_arenazg_2.JPG' %}">
               <div class="gallery-overlay">
                 <h3>FNC Arena Zagreb</h3>
                 <p>Intense ring lighting and robust sound systems deliver a thrilling spectator experience at the Zagreb FNC Boxing event.</p>
@@ -231,13 +231,13 @@
             </a>
 
 
-            <a href="{% static 'images/sport/fnc_arenazg_1.jpg' %}"
+            <a href="{% static 'images/sport/fnc_arenazg_1.JPG' %}"
                class="gallery-item"
                data-category="sport"
                data-pswp-width="1800"
                data-pswp-height="1000"
                target="_blank">
-              <img src="{% static 'images/sport/fnc_arenazg_1.jpg' %}">
+              <img src="{% static 'images/sport/fnc_arenazg_1.JPG' %}">
               <div class="gallery-overlay">
                 <h3>FNC ARENA ZAGREB</h3>
                 <p>Powerful lighting and clear audio amplify the drama of every match at Zagreb's premier boxing event.</p>
