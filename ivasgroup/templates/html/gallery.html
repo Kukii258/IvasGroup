@@ -19,21 +19,57 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.3/dist/photoswipe.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script type="module">
+        <script type="module">
       import PhotoSwipeLightbox from 'https://cdn.jsdelivr.net/npm/photoswipe@5.4.3/dist/photoswipe-lightbox.esm.min.js';
       import PhotoSwipe from 'https://cdn.jsdelivr.net/npm/photoswipe@5.4.3/dist/photoswipe.esm.min.js';
 
-      const lightbox = new PhotoSwipeLightbox({
-        gallery: '#gallery',
-        children: 'a',
-        pswpModule: PhotoSwipe,
-        showHideAnimationType: 'fade',
-        imageClickAction: 'zoom',
-        tapAction: 'zoom',
-        bgOpacity: 0.9,
-      });
+      let lightbox = null;
 
-      lightbox.init();
+      function initLightbox() {
+        if (lightbox) {
+          lightbox.destroy();
+        }
+
+        lightbox = new PhotoSwipeLightbox({
+          gallery: '#gallery',
+          children: 'a:not([style*="display: none"])',
+          pswpModule: PhotoSwipe,
+          showHideAnimationType: 'fade',
+          imageClickAction: 'zoom',
+          tapAction: 'zoom',
+          bgOpacity: 0.9,
+        });
+
+        lightbox.init();
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        initLightbox();
+
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const filterValue = this.getAttribute('data-filter');
+
+            // Update active button state
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            // Update visible items in the grid
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+              if (filterValue === 'all' || item.getAttribute('data-category').includes(filterValue)) {
+                item.style.display = 'block';
+              } else {
+                item.style.display = 'none';
+              }
+            });
+
+            // Reinitialize lightbox to update the filtered items
+            initLightbox();
+          });
+        });
+      });
     </script>
 
     <link rel="icon" type="image/png" href="{% static 'images/index/logo/favicon-96x96.png' %}" sizes="96x96" />
