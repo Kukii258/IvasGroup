@@ -233,27 +233,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-//Lanugage buttons
-    document.addEventListener('DOMContentLoaded', function() {
-    // Language switcher functionality
-    const languageButtons = document.querySelectorAll('.language-btn');
+// Language buttons
+document.addEventListener('DOMContentLoaded', function() {
+  const languageButtons = document.querySelectorAll('.language-btn');
 
-    function switchLanguage(lang) {
-      // Update all translatable elements
-      document.querySelectorAll('[data-' + lang + ']').forEach(element => {
-        element.textContent = element.getAttribute('data-' + lang);
-      });
+  function switchLanguage(lang) {
+    // Update all translatable elements
+    document.querySelectorAll('[data-' + lang + ']').forEach(element => {
+      element.textContent = element.getAttribute('data-' + lang);
+    });
 
-      // Update button states
-      languageButtons.forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-      });
-    }
-
+    // Update button states
     languageButtons.forEach(btn => {
-      btn.addEventListener('click', function() {
-        const lang = this.getAttribute('data-lang');
-        switchLanguage(lang);
-      });
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
+
+    // Store the selected language in local storage
+    localStorage.setItem('selectedLanguage', lang);
+  }
+
+  // Load the stored language preference, or default to English
+  const storedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+  switchLanguage(storedLanguage);
+
+  languageButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const lang = this.getAttribute('data-lang');
+      switchLanguage(lang);
     });
+  });
+});
+

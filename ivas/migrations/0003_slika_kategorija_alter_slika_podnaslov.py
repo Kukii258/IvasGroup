@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='slika',
             name='kategorija',
-            field=models.CharField(blank=True, choices=[('corporate', 'Corporate Events'), ('concert', 'Concert and Touring'), ('sport', 'Sporting Events'), ('ambition', 'Exhibitions'), ('broadcast', 'TV Broadcasting')], max_length=50, null=True),
+            field=models.CharField(blank=True, choices=[('corporate', 'Corporate Events'), ('concert', 'Concert and Touring'), ('sport', 'Sporting Events'), ('ambition', 'exhibitions'), ('broadcast', 'TV Broadcasting')], max_length=50, null=True),
         ),
         migrations.AlterField(
             model_name='slika',

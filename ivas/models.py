@@ -11,7 +11,7 @@ class Slika(models.Model):
         ('corporate', 'Corporate Events'),
         ('concert', 'Concert and Touring'),
         ('sport', 'Sporting Events'),
-        ('ambition', 'Exhibitions'),
+        ('ambition', 'exhibitions'),
         ('broadcast', 'TV Broadcasting'),
     )
 
