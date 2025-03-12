@@ -62,7 +62,8 @@
           <div class="contact-grid">
             <div class="contact-form-container">
               <h2 data-en="Send Us a Message" data-hr="Pošaljite Nam Poruku" >Send Us a Message</h2>
-              <form id="contactForm" class="contact-form">
+              <form  action="{% url 'send_email' %}" method="post">
+                {% csrf_token %}
                 <div class="form-group">
                   <label for="name" data-en="Name" data-hr="Ime" >Name</label>
                   <input type="text" id="name" name="name" required>
@@ -93,6 +94,38 @@
                 <button type="submit" class="btn btn-primary" data-en="Send Message" data-hr="Pošalji Poruku">Send Message</button>
               </form>
             </div>
+
+            <!-- Modal -->
+            <div id="emailModal1" class="modal1" style="z-index: 1000">
+              <div class="modal-content1">
+                <span class="close-btn1">&times;</span>
+                <h2 style="margin-bottom: 20px" data-en="Your message has been successfully send." data-hr="Vaša poruka je uspješno poslana" >Your message has been successfully send.</h2>
+                <p data-en="We will contact you soon." data-hr="Kontaktirat ćemo Vas uskoro" >We will contact you soon.</p>
+              </div>
+            </div>
+            {% if email_sent %}
+              <script>
+                window.onload = function() {
+                  var modal = document.getElementById("emailModal1");
+                  var closeBtn = document.getElementsByClassName("close-btn1")[0];
+
+                  // Show the modal
+                  modal.style.display = "block";
+
+                  // Close the modal when the user clicks the close button
+                  closeBtn.onclick = function() {
+                    modal.style.display = "none";
+                  }
+
+                  // Close the modal when the user clicks anywhere outside the modal
+                  window.onclick = function(event) {
+                    if (event.target === modal) {
+                      modal.style.display = "none";
+                    }
+                  }
+                }
+              </script>
+{% endif %}
 
             <div class="contact-info-container">
               <h2 data-en="Contact Information" data-hr="Kontakt Informacije" >Contact Information</h2>

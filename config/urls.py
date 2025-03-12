@@ -14,6 +14,7 @@ urlpatterns = [
 
     path("", views.home, name="home"),  # Change "index" to "home"
 
+    path("send_email/", views.send_email, name="send_email"),
 
     path("galerija", views.galerija,name='galerija'),
     path("photos", views.photos,name='photos'),
