@@ -1301,6 +1301,10 @@ footer {
     margin-left: 0;
     margin-top: 15px;
   }
+
+  .footer-contact {
+  margin-left: -50px;
+}
 }
 
 
