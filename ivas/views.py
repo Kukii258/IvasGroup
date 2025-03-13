@@ -45,9 +45,10 @@ def send_email(request):
     eventType = request.POST.get("eventType", "")
     message = request.POST.get("message", "")
 
-    sender_email = "salon.jelena.narucivanje@gmail.com"
-    sender_password = "aazqbvrsllernrks"
-    salon_email = "salon.jelena.narucivanje@gmail.com"
+    sender_email = "ivas.stranica@gmail.com"
+    #Lozinka: Anaana123
+    sender_password = "yuyf ijwn days musc"
+    ivas_email = "ivas.stranica@gmail.com"
 
     # Confirmation email to the user
     user_subject = "Confirmation of Sent Message"
@@ -100,10 +101,10 @@ def send_email(request):
             # Send notification email to the salon
             ivas_message = MIMEMultipart()
             ivas_message["From"] = sender_email
-            ivas_message["To"] = salon_email
+            ivas_message["To"] = ivas_email
             ivas_message["Subject"] = ivas_subject
             ivas_message.attach(MIMEText(ivas_body, "plain"))
-            server.sendmail(sender_email, salon_email, ivas_message.as_string())
+            server.sendmail(sender_email, ivas_email, ivas_message.as_string())
 
         print("Emails sent successfully!")
         # Return with a flag indicating success
