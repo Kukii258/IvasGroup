@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
+/*
       document.addEventListener('DOMContentLoaded', function() {
         // Language switcher functionality
         const languageButtons = document.querySelectorAll('.language-btn');
@@ -262,5 +262,7 @@ document.addEventListener('DOMContentLoaded', function() {
       switchLanguage(lang);
     });
   });
+
+ */
 });
 
