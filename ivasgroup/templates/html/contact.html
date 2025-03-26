@@ -29,7 +29,7 @@
     <header>
       <div class="logo">
         <a href="{% url 'home' %}">
-            <img style="height: 80px; width: auto; margin-top: 8px" src="{% static 'images/index/logo_color.png' %}" alt="logo">
+            <img class="logo_image" src="{% static 'images/index/logo_color.png' %}" alt="logo">
         </a>
       </div>
 
@@ -127,43 +127,63 @@
               </script>
 {% endif %}
 
-            <div class="contact-info-container">
-              <h2 data-en="Contact Information" data-hr="Kontakt Informacije" >Contact Information</h2>
+<div class="contact-info-container">
+              <h2>Contact Information</h2>
               <div class="contact-info">
-                <div class="info-item">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <div>
-                    <h3 data-en="Our Location" data-hr="Naša Lokacija" >Office</h3>
-                    <p> Green Gold V1, 4. Kat<br> Ul. grada Vukovara 269F<br>10000 Zagreb</p>
+                <div class="contact-info-columns">
+                  <div class="contact-info-column">
+                    <div class="info-item">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <div>
+                        <h3>Office</h3>
+                        <p>Ivas Grupa d.o.o<br>Green Gold V1, 4. Kat <br> Ul. grada Vukovara 269F<br>10000, Zagreb</p>
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <i class="fas fa-phone"></i>
+                      <div>
+                        <h3>Phone Number</h3>
+                        <p>+385 1 4633 353</p>
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <i class="fas fa-envelope"></i>
+                      <div>
+                        <h3>Email</h3>
+                        <p>info@ivas.hr</p>
+                      </div>
+                    </div>
                   </div>
-
-
-                  <i class="fas fa-map-marker-alt" style="margin-left: 70px"></i>
-
-                  <div >
-                    <h3 data-en="Our Location" data-hr="Naša Lokacija" >Warehouse</h3>
-                    <p>Bjelovarska ul. 4A<br>48260, Križevci</p>
-                  </div>
-                </div>
-                <div class="info-item">
-                  <i class="fas fa-phone"></i>
-                  <div>
-                    <h3 data-en="Phone Number" data-hr="Broj Telefona" >Phone Number</h3>
-                    <p>01 4633 353</p>
-                  </div>
-                </div>
-                <div class="info-item">
-                  <i class="fas fa-envelope"></i>
-                  <div>
-                    <h3>Email</h3>
-                    <p>skladiste@ivas.hr</p>
+                  <div class="contact-info-column">
+                    <div class="info-item">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <div>
+                        <h3>Warehouse</h3>
+                        <p>Ivas Grupa d.o.o<br>Bjelovarska ul. 4A<br> 48260, Križevci <br><div >‎ </div></p>
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <i class="fas fa-phone"></i>
+                      <div>
+                        <h3>Phone Number</h3>
+                        <p>+385 1 4633 353</p>
+                      </div>
+                    </div>
+                    <div class="info-item">
+                      <i class="fas fa-envelope"></i>
+                      <div>
+                        <h3>Email</h3>
+                        <p>skladiste@ivas.hr</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="info-item">
                   <i class="fas fa-clock"></i>
                   <div>
-                    <h3 data-en="Working Hours" data-hr="Radno Vrijeme" >Working Hours</h3>
-                    <p data-en="Monday - Friday: 8:00 - 16:00" data-hr="Ponedeljak - Petak: 8:00 - 16:00" >Monday - Friday: 8:00 - 16:00<br data-en="Sunday: Closed" data-hr="Nedelja: Zatvoreno" >Sunday: Closed</p>
+                    <h3>Working Hours</h3>
+                    <p>Monday - Friday: 8:00 - 16:00
+                    <br>Saturday & Sunday: Closed</p>
                   </div>
                 </div>
               </div>
@@ -215,8 +235,8 @@
           <h4 data-en="Contact Us" data-hr="Kontaktirajte nas">Contact Us</h4>
           <ul>
             <li><i class="fas fa-map-marker-alt"></i> Green Gold V1, 4. Kat, Ul. grada Vukovara 269F, 10000, Zagreb</li>
-            <li><i class="fas fa-phone"></i> 01 4633 353</li>
-            <li><i class="fas fa-envelope"></i> skladiste@ivas.hr</li>
+            <li><i class="fas fa-phone"></i> +385 1 4633 353</li>
+            <li><i class="fas fa-envelope"></i> info@ivas.hr</li>
           </ul>
         </div>
       </div>
