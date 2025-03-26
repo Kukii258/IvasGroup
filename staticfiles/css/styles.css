@@ -1320,7 +1320,7 @@ footer {
 @media (max-width: 992px) {
   .hero h1,
   .slide-content h1 {
-    font-size: 2.8rem;
+    font-size: 0.5rem;
   }
 
   .section-header h2 {
@@ -1371,8 +1371,13 @@ header{
 
   .hero h1,
   .slide-content h1 {
-    font-size: 2.5rem;
+    font-size: 0.5rem;
   }
+  .slide-content {
+  position: absolute;
+  bottom: 37px;
+  left: 10px;
+}
 
   .hero p,
   .slide-content p {
@@ -1409,7 +1414,7 @@ header{
 @media (max-width: 576px) {
   .hero h1,
   .slide-content h1 {
-    font-size: 2rem;
+    font-size: 1.2rem;
   }
 
   .section-header h2 {
@@ -1756,3 +1761,4 @@ nav a.active::after {
     padding: 15px;
   }
 }
+
