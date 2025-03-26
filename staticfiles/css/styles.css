@@ -466,10 +466,26 @@ nav a.active::after {
   position: absolute;
   bottom: -10px;
   left: 50%;
-  transform: translateX(-50%);
   width: 50px;
   height: 3px;
   background: var(--primary-color);
+  transform: translateX(-50%);
+}
+.who-we-are-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  position: relative;
+  display: inline-block;
+}
+.who-we-are-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 50px;
+  height: 3px;
+  background: var(--primary-color);
+  transform: translateX(-50%);
 }
 
 .sponsors-header p {
@@ -1125,6 +1141,97 @@ background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
   height: 450px;
 }
+/* Contact Page */
+.contact-page {
+  background-color: var(--dark-bg);
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.contact-form-container,
+.contact-info-container {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-form-container h2,
+.contact-info-container h2,
+.map-container h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.contact-form-container h2::after,
+.contact-info-container h2::after,
+.map-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--primary-color);
+}
+
+.contact-form {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-info {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-info-columns {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.contact-info-column {
+  flex: 1;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.info-item i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-right: 15px;
+  margin-top: 5px;
+}
+
+.info-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.info-item p {
+  color: var(--gray-text);
+}
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .contact-info-columns {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
 
 /* Footer */
 footer {
@@ -1706,10 +1813,8 @@ nav a.active::after {
 
 .who-we-are-heading {
   font-size: 2.5rem;
-  font-weight: 700;
   line-height: 1.2;
   margin-bottom: 30px;
-  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
