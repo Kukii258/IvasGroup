@@ -239,8 +239,8 @@ nav a.active::after {
 
 .slide-content {
   position: absolute;
-  bottom: 60px;
-  left: 60px;
+  bottom: 10px;
+  left: 10px;
   text-align: left;
   z-index: 2;
   max-width: 600px;
@@ -248,8 +248,7 @@ nav a.active::after {
 }
 
 .slide-content h1 {
-  font-family: 'Inter', sans-serif;
-  font-size: 2rem;
+  font-size: 1.3rem;
   line-height: 1.1;
   margin: 0;
   opacity: 0;
@@ -257,6 +256,7 @@ nav a.active::after {
   animation: fadeInUp 0.8s forwards;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   letter-spacing: -1px;
+  font-weight: normal;
 }
 
 .slide-content p {
