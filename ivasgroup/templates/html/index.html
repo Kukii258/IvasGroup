@@ -31,7 +31,7 @@
     <header>
       <div class="logo">
         <a href="{% url 'home' %}">
-            <img style="height: 60px; width: auto; margin-top: 8px" src="{% static 'images/index/logo_color.png' %}" alt="logo">
+            <img class="logo_image"  src="{% static 'images/index/logo_color.png' %}" alt="logo">
         </a>
       </div>
       <nav>
@@ -60,44 +60,9 @@
                 <h1>Imagine Dragons</h1>
               </div>
             </div>
-            <div class="swiper-slide" style="background-image: url('{% static "images/index/2.jpg" %}')">
-              <div class="slide-content">
-                <h1>Hydeout 2017</h1>
-              </div>
-            </div>
-            <div class="swiper-slide" style="background-image: url('{% static "images/index/3.jpg" %}')">
-              <div class="slide-content">
-                <h1>Tiesto Zrće</h1>
-              </div>
-            </div>
-            <div class="swiper-slide" style="background-image: url('{% static "images/index/4.jpg" %}')">
-              <div class="slide-content">
-                <h1>50 Cent</h1>
-              </div>
-            </div>
             <div class="swiper-slide" style="background-image: url('{% static "images/index/5.JPG" %}')">
               <div class="slide-content">
                 <h1>Ninja Warrior Romania Bukurest</h1>
-              </div>
-            </div>
-            <div class="swiper-slide" style="background-image: url('{% static "images/index/6.jpg" %}')">
-              <div class="slide-content">
-                <h1>Fhr</h1>
-              </div>
-            </div>
-            <div class="swiper-slide" style="background-image: url('{% static "images/index/7.JPG" %}')">
-              <div class="slide-content">
-                <h1 data-en="We're Hiring" data-hr="Tražimo Pojačanje">UFC Arena Zagreb</h1>
-              </div>
-            </div>
-            <div class="swiper-slide" style="background-image: url('{% static "images/index/8.jpg" %}')">
-              <div class="slide-content">
-                <h1 data-en="We're Hiring" data-hr="Tražimo Pojačanje">Eurovision Song Competition Luxembourg</h1>
-              </div>
-            </div>
-            <div class="swiper-slide" style="background-image: url('{% static "images/index/9.JPG" %}')">
-              <div class="slide-content">
-                <h1 data-en="We're Hiring" data-hr="Tražimo Pojačanje">Masterchef Bratislava</h1>
               </div>
             </div>
             <div class="swiper-slide" style="background-image: url('{% static "images/index/10.jpg" %}')">
@@ -110,12 +75,48 @@
                 <h1 data-en="We're Hiring" data-hr="Tražimo Pojačanje">Supertalent</h1>
               </div>
             </div>
+            <div class="swiper-slide" style="background-image: url('{% static "images/index/7.JPG" %}')">
+              <div class="slide-content">
+                <h1 data-en="We're Hiring" data-hr="Tražimo Pojačanje">UFC Arena Zagreb</h1>
+              </div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('{% static "images/index/3.jpg" %}')">
+              <div class="slide-content">
+                <h1>Tiesto Zrće</h1>
+              </div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('{% static "images/index/4.jpg" %}')">
+              <div class="slide-content">
+                <h1>50 Cent</h1>
+              </div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('{% static "images/index/6.jpg" %}')">
+              <div class="slide-content">
+                <h1>Fhr</h1>
+              </div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('{% static "images/index/8.jpg" %}')">
+              <div class="slide-content">
+                <h1 data-en="We're Hiring" data-hr="Tražimo Pojačanje">Eurovision Song Competition Luxembourg</h1>
+              </div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('{% static "images/index/2.jpg" %}')">
+              <div class="slide-content">
+                <h1>Hydeout 2017</h1>
+              </div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('{% static "images/index/9.JPG" %}')">
+              <div class="slide-content">
+                <h1 data-en="We're Hiring" data-hr="Tražimo Pojačanje">Masterchef Bratislava</h1>
+              </div>
+            </div>
+
             <div class="swiper-slide" style="background-image: url('{% static "images/index/12.jpg" %}')">
               <div class="slide-content">
                 <h1>Ultra Europe</h1>
               </div>
             </div>
-            <div class="swiper-slide" style="background-image: url('{% static "images/index/13.JPG" %}')">
+            <div class="swiper-slide" style="background-image: url('{% static "images/index/13.jpg" %}')">
               <div class="slide-content">
                 <h1>Zagreb Classic</h1>
               </div>
@@ -126,6 +127,26 @@
           <div class="swiper-button-next"></div>
         </div>
       </section>
+
+
+      <section class="who-we-are">
+        <div class="who-we-are-container">
+          <div class="who-we-are-image">
+            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="Technical production setup">
+            <div class="experience-badge">
+              <div class="experience-number">25+</div>
+              <div class="experience-text">Years of Excellence</div>
+            </div>
+          </div>
+          <div class="who-we-are-content">
+            <h2 class="who-we-are-heading">Who We Are?</h2>
+            <p class="who-we-are-text">Leading supplier of technical production solutions for projects across the eu.</p>
+            <p class="who-we-are-text">Working as a part of your team, we ensure that your exact audio, video and lighting requirements are matched. Following the developments in video technology, we are constantly evolving our production support. Using the latest lighting techniques, we create original and inspiring themes and solutions for every project.</p>
+            <p class="who-we-are-text">Professional resources ensure that your event receives the sound and visual quality it deserves, by determining the right pitch and frequency for your audience.</p>
+          </div>
+        </div>
+      </section>
+
 
       <!-- Services Section -->
       <section id="services" class="services">
@@ -268,9 +289,9 @@
         <div class="footer-contact">
           <h4 data-en="Contact Us" data-hr="Kontaktirajte nas">Contact Us</h4>
           <ul>
-            <li><i class="fas fa-map-marker-alt"></i> Donje Svetice 40, 10000, Zagreb</li>
+            <li><i class="fas fa-map-marker-alt"></i> Green Gold V1, 4. Kat, Ul. grada Vukovara 269F, 10000, Zagreb</li>
             <li><i class="fas fa-phone"></i> 01 4633 353</li>
-            <li><i class="fas fa-envelope"></i> info@ivasgroup.com</li>
+            <li><i class="fas fa-envelope"></i> skladiste@ivas.hr</li>
           </ul>
         </div>
       </div>
