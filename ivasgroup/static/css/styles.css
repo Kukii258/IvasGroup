@@ -1847,7 +1847,9 @@ nav a.active::after {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
+.contact-line{
+  display: none;
+}
 @media (max-width: 768px) {
   .who-we-are-container {
     flex-direction: column;
@@ -1862,6 +1864,9 @@ nav a.active::after {
     bottom: -20px;
     right: 20px;
     padding: 15px;
+  }
+  .contact-line{
+    display: unset;
   }
 }
 
