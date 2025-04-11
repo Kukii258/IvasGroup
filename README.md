@@ -2,18 +2,22 @@
 
 **IvasGroup** is a sleek, modern website for a professional event production company. The platform showcases the firm’s broad range of services, past work, and contact information. From concerts to TV broadcasting, the site offers a visual and informative experience for potential clients.
 
+🌐 **Live site**: [https://lukakukelj.from.hr/contact](https://lukakukelj.from.hr/contact)
+
+---
+
 ## 🌟 Features
 
 ### 🔹 Home Page
 - Full-width **image slider** with 8 curated images, each representing a service segment:
-  - Concerts
-  - Conferences
-  - TV Production
-  - Sports Events
-  - Corporate Events
-  - Exhibitions
-  - Fashion Shows
-  - Touring
+  - Concerts  
+  - Conferences  
+  - TV Production  
+  - Sports Events  
+  - Corporate Events  
+  - Exhibitions  
+  - Fashion Shows  
+  - Touring  
 
 - **Who We Are**: Introduction to the IvasGroup story and company values  
 - **Our Services**: Summary of key offerings across industries  
@@ -38,6 +42,15 @@ A filterable image gallery featuring real project snapshots.
 - Contact form that auto-sends email to the team  
 - Company info and address  
 - Embedded interactive map  
+- ✅ Available at [https://lukakukelj.from.hr/contact](https://lukakukelj.from.hr/contact)
+
+---
+
+## 🔐 Security
+
+To protect the web app from being cloned or reused without permission:
+> 🧹 **Templates and static files have been removed from the repository**.  
+This ensures that the design and front-end assets cannot be stolen or copied.
 
 ---
 
