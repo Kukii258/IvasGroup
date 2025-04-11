@@ -1,85 +1,127 @@
-# IvasGroup
+# IvasGroup 🎤🎥🏟️
 
-Behold My Awesome Project!
+**IvasGroup** is a sleek, modern website for a professional event production company. The platform showcases the firm’s broad range of services, past work, and contact information. From concerts to TV broadcasting, the site offers a visual and informative experience for potential clients.
 
-[![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg?logo=cookiecutter)](https://github.com/cookiecutter/cookiecutter-django/)
-[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+## 🌟 Features
 
-License: MIT
+### 🔹 Home Page
+- Full-width **image slider** with 8 curated images, each representing a service segment:
+  - Concerts
+  - Conferences
+  - TV Production
+  - Sports Events
+  - Corporate Events
+  - Exhibitions
+  - Fashion Shows
+  - Touring
 
-## Settings
+- **Who We Are**: Introduction to the IvasGroup story and company values  
+- **Our Services**: Summary of key offerings across industries  
+- **Our Equipment**: Overview of professional-grade gear used in event production  
 
-Moved to [settings](https://cookiecutter-django.readthedocs.io/en/latest/1-getting-started/settings.html).
+### 🖼️ Gallery
+A filterable image gallery featuring real project snapshots.
+- Filters include:
+  - All
+  - Corporate Events
+  - Concert and Touring
+  - Sporting Events
+  - Fashion Events
+  - Exhibitions
+  - TV Broadcasting
 
-## Basic Commands
+### 🧑‍💼 About Us
+- Company background and mission  
+- Profiles of team members and leadership  
 
-### Setting Up Your Users
+### 📬 Contact Page
+- Contact form that auto-sends email to the team  
+- Company info and address  
+- Embedded interactive map  
 
-- To create a **normal user account**, just go to Sign Up and fill out the form. Once you submit it, you'll see a "Verify Your E-mail Address" page. Go to your console to see a simulated email verification message. Copy the link into your browser. Now the user's email should be verified and ready to go.
+---
 
-- To create a **superuser account**, use this command:
+## ⚙️ Tech Stack
 
-      $ python manage.py createsuperuser
+- **Python / Django**
+- **PostgreSQL**
+- **HTML + Tailwind CSS / Sass**
+- **JavaScript**
+- **Celery** (for async tasks)
+- **Docker** and **Heroku** support via Cookiecutter Django
 
-For convenience, you can keep your normal user logged in on Chrome and your superuser logged in on Firefox (or similar), so that you can see how the site behaves for both kinds of users.
+---
 
-### Type checks
+## 🚀 Getting Started
 
-Running type checks with mypy:
-
-    $ mypy ivasgroup
-
-### Test coverage
-
-To run the tests, check your test coverage, and generate an HTML coverage report:
-
-    $ coverage run -m pytest
-    $ coverage html
-    $ open htmlcov/index.html
-
-#### Running tests with pytest
-
-    $ pytest
-
-### Live reloading and Sass CSS compilation
-
-Moved to [Live reloading and SASS compilation](https://cookiecutter-django.readthedocs.io/en/latest/2-local-development/developing-locally.html#using-webpack-or-gulp).
-
-### Celery
-
-This app comes with Celery.
-
-To run a celery worker:
+To run the app locally:
 
 ```bash
+git clone https://gitlab.com/your-user/ivasgroup.git
 cd ivasgroup
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+```
+
+Create a superuser:
+
+```bash
+python manage.py createsuperuser
+```
+
+---
+
+## 🔄 Development & Tools
+
+### Type Checks
+
+```bash
+mypy ivasgroup
+```
+
+### Running Tests
+
+```bash
+pytest
+coverage run -m pytest
+coverage html
+open htmlcov/index.html
+```
+
+### Celery Workers
+
+```bash
 celery -A config.celery_app worker -l info
 ```
 
-Please note: For Celery's import magic to work, it is important _where_ the celery commands are run. If you are in the same folder with _manage.py_, you should be right.
-
-To run [periodic tasks](https://docs.celeryq.dev/en/stable/userguide/periodic-tasks.html), you'll need to start the celery beat scheduler service. You can start it as a standalone process:
+### Periodic Tasks
 
 ```bash
-cd ivasgroup
 celery -A config.celery_app beat
 ```
 
-or you can embed the beat service inside a worker with the `-B` option (not recommended for production use):
+---
 
-```bash
-cd ivasgroup
-celery -A config.celery_app worker -B -l info
-```
-
-## Deployment
-
-The following details how to deploy this application.
-
-### Heroku
-
-See detailed [cookiecutter-django Heroku documentation](https://cookiecutter-django.readthedocs.io/en/latest/3-deployment/deployment-on-heroku.html).
+## 📦 Deployment
 
 ### Docker
 
-See detailed [cookiecutter-django Docker documentation](https://cookiecutter-django.readthedocs.io/en/latest/3-deployment/deployment-with-docker.html).
+Full [Docker setup guide here](https://cookiecutter-django.readthedocs.io/en/latest/3-deployment/deployment-with-docker.html)
+
+### Heroku
+
+See [Heroku deployment guide](https://cookiecutter-django.readthedocs.io/en/latest/3-deployment/deployment-on-heroku.html)
+
+---
+
+## 📄 License
+
+MIT
+
+---
+
+## 👥 Author
+
+**Luka Kukelj**  
+[GitLab Profile](https://gitlab.com/kukelj.luka)
